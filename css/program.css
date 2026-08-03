@@ -1,0 +1,1019 @@
+@charset "utf-8";
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,
+body {
+  width:100%;
+  font-family:'Pretendard', sans-serif;
+  color:#181818;
+}
+
+ul,
+li {
+  list-style:none;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+img {
+  display:block;
+  max-width:100%;
+}
+
+button {
+  border:0;
+  background:none;
+  cursor:pointer;
+}
+
+
+:root {
+  --black:#181818;
+  --point:#FF6E40;
+  --gray:#7A7A7A;
+}
+
+
+.hero_i,
+.poster_i,
+.about_i,
+.black_i,
+.board_i,
+.footer_i,
+.opening_i,
+.competition_i {
+  width:1440px;
+  max-width:calc(100% - 80px);
+  margin:0 auto;
+}
+
+.invitation_i,
+.special_i {
+  width:1400px;
+  max-width:calc(100% - 80px);
+  margin:0 auto;
+}
+
+
+/* =========================================
+  헤더
+========================================= */
+header {
+  width:100%;
+  height:80px;
+
+  background-color:#fff;
+  box-shadow:0 4px 10px rgba(0,0,0,.08);
+
+  position:fixed;
+  z-index:1000;
+}
+
+.header_i {
+  max-width:calc(100% - 80px);
+  height:100%;
+  margin:0 auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo a {
+  display:block;
+}
+
+.logo img {
+  width:80px;
+}
+
+.header_nav ul {
+  display:flex;
+  align-items:center;
+  gap:84px;
+}
+
+.header_nav ul li {
+  position:relative;
+  display:block;
+
+  font-size:22px;
+  font-weight:600;
+  white-space:nowrap;
+}
+
+.header_nav a::after {
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-28px;
+
+  width:0;
+  height:5px;
+  background:var(--point);
+
+  transform:translateX(-50%);
+  transition:.3s;
+}
+
+.header_nav a:hover::after {
+  width:120%;
+}
+
+.icon {
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.icon i,
+.icon svg {
+  width:28px;
+  height:28px;
+  font-size:28px;
+}
+
+.menu_btn {
+  padding:0;
+}
+
+
+/* =========================================
+  비주얼
+========================================= */
+.visual {
+  width:100%;
+  height:400px;
+
+  background-image:url(../img/프로그램_히어로_췝.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:cover;
+}
+
+.visual_i {
+  width:1400px;
+  max-width:calc(100% - 80px);
+  height:100%;
+  margin:0 auto;
+  padding-top:80px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.visual_title {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.visual_title h1 {
+  font-size:56px;
+  font-weight:700;
+  line-height:1.2;
+  color:#fff;
+}
+
+.visual_title p {
+  font-size:28px;
+  font-weight:700;
+  line-height:1.3;
+  color:#fff;
+}
+
+.visual_text {
+  width:490px;
+
+  font-size:22px;
+  font-weight:500;
+  line-height:1.4;
+  color:#fff;
+  text-align:left;
+}
+
+
+/* =========================================
+   프로그램
+========================================= */
+.program_tab {
+  width:100%;
+  height:80px;
+}
+
+.program_tab ul {
+  width:760px;
+  height:100%;
+  margin:0 auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:40px;
+}
+
+.program_tab li {
+  height:100%;
+}
+
+.program_tab li a {
+  width:120px;
+  height:80px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:22px;
+  font-weight:600;
+  line-height:1.4;
+  color:var(--gray);
+
+  border-bottom:5px solid transparent;
+  transition:.3s;
+  box-sizing:border-box;
+}
+
+.program_tab li.active a,
+.program_tab li a:hover {
+  color:var(--point);
+}
+
+.program_tab li.active a {
+  border-bottom-color:var(--point);
+}
+
+
+/* =========================================
+   arrow
+========================================= */
+.opening_prev,
+.opening_next,
+.competition_prev,
+.competition_next,
+.invitation_prev,
+.invitation_next,
+.special_prev,
+.special_next {
+  position:absolute;
+  top:50%;
+  z-index:10;
+
+  width:62px;
+  height:62px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+  background:#fff;
+  color:#FF3D00;
+
+  transform:translateY(-50%);
+}
+
+.invitation_prev,
+.invitation_next,
+.special_prev,
+.special_next {
+  box-shadow:0 0 4px rgb(0 0 0 / 25%);
+  transition:
+    background-color .3s ease,
+    color .3s ease,
+    opacity .3s ease;
+}
+
+.invitation_prev:hover,
+.invitation_next:hover,
+.invitation_prev:focus-visible,
+.invitation_next:focus-visible,
+.special_prev:hover,
+.special_next:hover,
+.special_prev:focus-visible,
+.special_next:focus-visible {
+  background:var(--point);
+  color:#fff;
+}
+
+.invitation_prev i,
+.invitation_next i,
+.special_prev i,
+.special_next i {
+  font-size:24px;
+}
+
+.invitation_prev.swiper-button-disabled,
+.invitation_next.swiper-button-disabled,
+.special_prev.swiper-button-disabled,
+.special_next.swiper-button-disabled {
+  opacity:.3;
+  cursor:default;
+  pointer-events:none;
+}
+
+.opening_prev,
+.competition_prev {
+  left:-92px;
+}
+
+.opening_next,
+.competition_next {
+  right:-92px;
+}
+
+.invitation_prev,
+.special_prev {
+  left:-31px;
+}
+
+.invitation_next,
+.special_next {
+  right:-31px;
+}
+
+
+/* =========================================
+  more btn
+========================================= */
+.more {
+  position:relative;
+  overflow:hidden;
+  z-index:1;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:18px;
+
+  border:1px solid #fff;
+
+  font-size:22px;
+  font-weight:600;
+  color:#fff;
+}
+
+.more::before {
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+
+  width:0;
+  height:0;
+  border-radius:50%;
+
+  background:linear-gradient(90deg, #FF6E40, #FE0144);
+
+  transform:translate(-50%,-50%);
+  transition:.5s ease;
+  z-index:-1;
+}
+
+.more:hover {
+  color:#fff;
+  border-color:transparent;
+}
+
+.more:hover::before {
+  width:400px;
+  height:400px;
+}
+
+
+/* =========================================
+  black section
+========================================= */
+.opening .section_title,
+.competition .section_title {
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+
+.opening .section_title h2,
+.competition .section_title h2 {
+  font-size:40px;
+  font-weight:700;
+  line-height:1.2;
+}
+
+.opening .section_title p,
+.competition .section_title p {
+  font-size:22px;
+  font-weight:600;
+  color:var(--point);
+}
+
+.opening .section_title {
+  flex-direction:column;
+  text-align:center;
+  margin-bottom:44px;
+}
+
+.opening .section_title p {
+  margin-top:8px;
+}
+
+
+/* =========================================
+  Opening
+========================================= */
+.opening {
+  padding:160px 0;
+  background:var(--black);
+  color:#fff;
+}
+
+.opening .slide_wrap,
+.competition .slide_wrap {
+  position:relative;
+}
+
+.opening_slide {
+  width:100%;
+  max-width: 1440px;
+  height:500px;
+  margin:0 auto;
+  overflow:hidden;
+}
+
+.opening_slide .swiper-wrapper {
+  display:flex;
+}
+
+.opening_slide .swiper-slide {
+  width:100%;
+  flex-shrink:0;
+}
+
+.opening_card {
+  position:relative;
+  width:100%;
+  height:500px;
+  overflow:hidden;
+
+  border-radius:16px;
+  border:1px solid var(--gray);
+}
+
+.opening_card img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.opening_card::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg, rgba(0,0,0,.5), transparent);
+}
+
+.opening_text {
+  position:absolute;
+  left:30px;
+  right: 30px;
+  bottom:35px;
+  z-index:2;
+  width:675px;
+}
+
+.opening_text .label {
+  font-size:28px;
+  font-weight:700;
+  color:var(--point);
+}
+
+.opening_text h3 {
+  margin-top:30px;
+  font-size:40px;
+  font-weight:700;
+}
+
+.opening_text .eng {
+  font-size:28px;
+  font-weight:700;
+}
+
+.opening_text .info {
+  margin-top:50px;
+  font-size:22px;
+  font-weight:600;
+}
+
+.opening_text .desc {
+  margin-top:8px;
+
+  font-size:16px;
+  font-weight:200;
+  line-height:1.6;
+
+  display:-webkit-box;
+
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+
+/* =========================================
+  Competition 섹션
+========================================= */
+.competition {
+  padding:160px 0;
+  background:var(--black);
+  color:#fff;
+}
+
+.competition .section_head {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:58px;
+}
+
+.competition_slide {
+  width:100%;
+  max-width: 1440px;
+  overflow:hidden;
+}
+
+.competition_slide .swiper-wrapper {
+  display:flex;
+  gap:16px;
+}
+
+.competition_slide .swiper-slide {
+  width:456px;
+  flex-shrink:0;
+}
+
+.film_card {
+  width:456px;
+  height:514px;
+
+  display:flex;
+  flex-direction:column;
+
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  color:var(--black);
+}
+
+.film_img {
+  position:relative;
+  width:456px;
+  height:257px;
+}
+
+.film_img img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.film_img .label {
+  position:absolute;
+  top:0;
+  left:0;
+
+  width:89px;
+  height:51px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:var(--point);
+  border-radius:16px 0 16px 0;
+
+  font-size:22px;
+  font-weight:600;
+  color:#fff;
+}
+
+.film_text {
+  height:257px;
+  padding:35px 26px;
+
+  display:flex;
+  flex-direction:column;
+}
+
+.film_text h3 {
+  font-size:28px;
+  font-weight:700;
+  line-height:1.3;
+}
+
+.film_text .eng {
+  font-size:14px;
+  font-weight:400;
+}
+
+.film_text .director {
+  margin-top:16px;
+  font-size:22px;
+  font-weight:600;
+}
+
+.film_text .info {
+  margin-top:auto;
+  font-size:22px;
+  font-weight:600;
+}
+
+
+/* =========================================
+  프로그램 bg
+========================================= */
+.program_bg {
+  background-image:url("../img/초청부문_웹.png");
+  background-repeat:repeat-y;
+  background-position:center;
+  background-size:cover;
+  background-attachment:fixed;
+}
+
+
+
+.invitation,
+.special {
+  width:100%;
+  padding:120px 0;
+  color:var(--black);
+}
+
+.invitation .section_head,
+.special .section_head {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+  margin-bottom:84px;
+}
+
+.invitation .section_title,
+.special .section_title {
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+
+.invitation .section_title h2,
+.special .section_title h2 {
+  font-size:40px;
+  font-weight:700;
+  line-height:1.2;
+  color:var(--black);
+}
+
+.invitation .section_title p,
+.special .section_title p {
+  font-size:22px;
+  font-weight:600;
+  line-height:1.4;
+  color:var(--point);
+}
+
+
+.invitation .more,
+.special .more {
+  height:51px;
+  padding:20px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  border:1px solid var(--black);
+  background:#fff;
+
+  font-size:22px;
+  font-weight:600;
+  line-height:1.4;
+  color:var(--black);
+
+  transition:
+    background-color .3s ease,
+    color .3s ease,
+    border-color .3s ease;
+}
+
+.invitation .more i,
+.special .more i {
+  font-size:18px;
+  transition:transform .3s ease;
+}
+
+.invitation .more:hover,
+.invitation .more:focus-visible,
+.special .more:hover,
+.special .more:focus-visible {
+  border-color:var(--point);
+  background:var(--point);
+  color:#fff;
+}
+
+.invitation .more:hover i,
+.invitation .more:focus-visible i,
+.special .more:hover i,
+.special .more:focus-visible i {
+  transform:translateX(4px);
+}
+
+.invitation .program_body,
+.special .program_body {
+  display:grid;
+  grid-template-columns:207px minmax(0, 1fr);
+  align-items:end;
+  gap:106px;
+}
+
+.invitation .program_intro,
+.special .program_intro {
+  width:207px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:26px;
+}
+
+.invitation .program_intro h3,
+.special .program_intro h3 {
+  width:100%;
+
+  font-size:28px;
+  font-weight:700;
+  line-height:1.3;
+  color:var(--black);
+  word-break:keep-all;
+}
+
+.invitation .program_intro p,
+.special .program_intro p {
+  width:100%;
+
+  font-size:16px;
+  font-weight:400;
+  line-height:1.6;
+  color:var(--black);
+  word-break:keep-all;
+}
+
+.invitation .program_intro img {
+  width:118px;
+  height:99px;
+  object-fit:contain;
+}
+
+.special .program_intro {
+  gap:32px;
+}
+
+.special .program_intro img {
+  width:152px;
+  height:89px;
+  object-fit:contain;
+}
+
+.invitation .slide_area,
+.special .slide_area {
+  position:relative;
+  width:100%;
+  min-width:0;
+}
+
+.invitation_slide,
+.special_slide {
+  width:100%;
+  overflow:hidden;
+}
+
+.invitation_slide .swiper-wrapper,
+.special_slide .swiper-wrapper {
+  display:flex;
+  gap:16px;
+}
+
+.invitation_slide .swiper-slide,
+.special_slide .swiper-slide {
+  width:calc((100% - 64px) / 3);
+  height:auto;
+  flex-shrink:0;
+}
+
+.invitation .film_card,
+.special .film_card {
+  width:100%;
+  height:383px;
+  min-height:0;
+  overflow:hidden;
+
+  border-radius:12px;
+  background:#fff;
+  color:var(--black);
+
+  box-shadow:0 0 10px rgb(0 0 0 / 15%);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.invitation .film_card > a,
+.special .film_card > a {
+  width:100%;
+  height:100%;
+
+  display:flex;
+  flex-direction:column;
+}
+
+.invitation .film_img,
+.special .film_img {
+  position:relative;
+  width:100%;
+  height:192px;
+  flex-shrink:0;
+  overflow:hidden;
+}
+
+.invitation .film_img img,
+.special .film_img img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.invitation .film_img .label,
+.special .film_img .label {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:2;
+
+  width:auto;
+  height:41px;
+  padding:7px 15px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:12px 0 12px 0;
+  background:var(--point);
+
+  font-size:16px;
+  font-weight:600;
+  line-height:1.6;
+  color:#fff;
+
+  white-space:nowrap;
+}
+
+.invitation .film_img .label {
+  min-width:138px;
+}
+
+.special .film_img .label {
+  min-width:69px;
+}
+
+.invitation .film_text,
+.special .film_text {
+  width:100%;
+  height:191px;
+  min-height:0;
+  padding:20px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+
+.invitation .film_text h3,
+.special .film_text h3 {
+  overflow:hidden;
+  width:100%;
+
+  font-size:22px;
+  font-weight:600;
+  line-height:1.4;
+  color:var(--black);
+
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.invitation .film_text .eng,
+.special .film_text .eng {
+  overflow:hidden;
+  width:100%;
+
+  font-size:12px;
+  font-weight:400;
+  line-height:1.5;
+  color:var(--black);
+
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.invitation .film_text .director,
+.special .film_text .director {
+  margin-top:12px;
+
+  font-size:16px;
+  font-weight:600;
+  line-height:1.6;
+  color:var(--black);
+}
+
+.invitation .film_text .info,
+.special .film_text .info {
+  margin-top:auto;
+
+  font-size:16px;
+  font-weight:600;
+  line-height:1.6;
+  color:var(--black);
+}
+
+
+/* =========
+   푸터
+============ */
+footer {
+  padding:70px 0;
+  border-top:1px solid #EEEEEE;
+}
+
+.footer_i {
+  display:flex;
+  align-items:flex-start;
+  gap:80px;
+}
+
+.footer_logo img {
+  width:150px;
+}
+
+.footer_info {
+  font-size:15px;
+  line-height:1.8;
+  color:var(--black);
+}
+
+.footer_info p + p {
+  margin-top:15px;
+}
+
+  /* =====================
+     SIDE BUTTON
+  ===================== */
+
+  .side_btn{
+    right:20px;
+    bottom:24px;
+
+    gap:8px;
+  }
+
+  .side_btn a{
+    width:48px;
+    height:48px;
+
+    border-radius:12px;
+  }
+
+  .top_btn{
+    font-size:14px;
+  }
+
+  .ticket_btn i,
+  .ticket_btn svg{
+    width:20px;
+    height:20px;
+    font-size:20px;
+  }
+
+  .ticket_btn span{
+    font-size:9px;
+  }
