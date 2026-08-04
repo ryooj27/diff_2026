@@ -53,7 +53,7 @@ button {
 .footer_i,
 .opening_i,
 .competition_i {
-  width:1440px;
+  width:1400px;
   max-width:calc(100% - 80px);
   margin:0 auto;
 }
@@ -71,7 +71,7 @@ button {
 ========================================= */
 header {
   width:100%;
-  height:80px;
+  height:100px;
 
   background-color:#fff;
   box-shadow:0 4px 10px rgba(0,0,0,.08);
@@ -95,7 +95,7 @@ header {
 }
 
 .logo img {
-  width:80px;
+  width:100px;
 }
 
 .header_nav ul {
@@ -296,6 +296,10 @@ header {
     opacity .3s ease;
 }
 
+.opening_prev:hover,
+.opening_next:hover,
+.competition_prev:hover,
+.competition_next:hover,
 .invitation_prev:hover,
 .invitation_next:hover,
 .invitation_prev:focus-visible,
@@ -356,13 +360,12 @@ header {
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:8px;
-  padding:18px;
+  
+  padding:10px 20px;
 
   border:1px solid #fff;
 
   font-size:22px;
-  font-weight:600;
   color:#fff;
 }
 
@@ -397,12 +400,20 @@ header {
 /* =========================================
   black section
 ========================================= */
-.opening .section_title,
+
+.opening .section_title{
+  flex-direction: column;
+  text-align: center;
+  gap: 8px;
+  margin-bottom: 44px;
+}
 .competition .section_title {
   display:flex;
   align-items:center;
-  gap:24px;
+  gap: 24px;
 }
+
+
 
 .opening .section_title h2,
 .competition .section_title h2 {
@@ -433,7 +444,7 @@ header {
   Opening
 ========================================= */
 .opening {
-  padding:160px 0;
+  padding:160px 0 0;
   background:var(--black);
   color:#fff;
 }
@@ -445,7 +456,7 @@ header {
 
 .opening_slide {
   width:100%;
-  max-width: 1440px;
+  max-width: 1400px;
   height:500px;
   margin:0 auto;
   overflow:hidden;
@@ -516,13 +527,15 @@ header {
 }
 
 .opening_text .desc {
-  margin-top:8px;
+  margin-top:16px;
 
   font-size:16px;
   font-weight:200;
   line-height:1.6;
 
   display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
 
   overflow:hidden;
   text-overflow:ellipsis;
@@ -547,7 +560,7 @@ header {
 
 .competition_slide {
   width:100%;
-  max-width: 1440px;
+  max-width: 1400px;
   overflow:hidden;
 }
 
@@ -642,19 +655,22 @@ header {
   프로그램 bg
 ========================================= */
 .program_bg {
-  background-image:url("../img/초청부문_웹.png");
+  background-image:url("../img/bg\ \(3\).png");
   background-repeat:repeat-y;
   background-position:center;
   background-size:cover;
   background-attachment:fixed;
 }
 
-
-
-.invitation,
-.special {
+.invitation{
   width:100%;
-  padding:120px 0;
+   padding:160px 0 120px;
+  color:var(--black);
+}
+
+.special{
+  width:100%;
+  padding:120px 0 160px;
   color:var(--black);
 }
 
@@ -693,8 +709,7 @@ header {
 
 .invitation .more,
 .special .more {
-  height:51px;
-  padding:20px;
+  padding:10px 20px;
 
   display:flex;
   align-items:center;
@@ -796,7 +811,7 @@ header {
 .invitation .slide_area,
 .special .slide_area {
   position:relative;
-  width:100%;
+  width:1084px;
   min-width:0;
 }
 
@@ -804,18 +819,19 @@ header {
 .special_slide {
   width:100%;
   overflow:hidden;
+
+  padding:12px 0 18px;
 }
 
 .invitation_slide .swiper-wrapper,
 .special_slide .swiper-wrapper {
   display:flex;
-  gap:16px;
+  gap:32px;
 }
 
 .invitation_slide .swiper-slide,
 .special_slide .swiper-slide {
-  width:calc((100% - 64px) / 3);
-  height:auto;
+  width:340px;
   flex-shrink:0;
 }
 
@@ -985,35 +1001,558 @@ footer {
   margin-top:15px;
 }
 
-  /* =====================
-     SIDE BUTTON
-  ===================== */
+/* =====================
+   SIDE BUTTON
+===================== */
+
+
+.side_btn {
+
+  position:fixed;
+  right:90px;
+  bottom:120px;
+
+
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+
+
+  z-index:9999;
+
+}
+
+
+
+.side_btn a {
+
+  width:60px;
+  height:60px;
+
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+
+  background:#fff;
+  border-radius:16px;
+  color:#FF3D00;
+
+
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+}
+
+
+
+/* TOP */
+
+.top_btn {
+
+  font-size:22px;
+  font-weight:600;
+
+}
+
+
+
+/* 관람안내 */
+
+.ticket_btn {
+
+  flex-direction:column;
+  gap:2px;
+
+}
+
+
+
+.ticket_btn i, .ticket_btn svg {
+
+  width: 28px;
+  height: 28px;
+  font-size:30px;
+  line-height:1;
+
+}
+
+
+
+.ticket_btn span {
+
+  font-size:12px;
+  font-weight:700;
+  line-height:1.5;
+
+}
+
+@media screen and (max-width:1024px){
+
+  .opening_prev,
+  .opening_next,
+  .competition_prev,
+  .competition_next,
+  .invitation_prev,
+  .invitation_next,
+  .special_prev,
+  .special_next{
+    display:none;
+  }
+
+
+  header{
+    width:100%;
+    height:100px;
+
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+
+    background:#fff;
+    box-shadow:0 4px 4px rgba(0,0,0,.05);
+  }
+
+  .header_i{
+    max-width:calc(100% - 64px);
+    height:100%;
+
+    margin:0 auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  .logo img{
+    width:108px;
+    height:auto;
+  }
+
+  .header_nav{
+    display:none;
+  }
+
+  .icon{
+    display:flex;
+    align-items:center;
+    gap:20px;
+  }
+
+  .icon i,
+  .icon svg{
+    width:28px;
+    height:28px;
+    font-size:28px;
+  }
+
+  .visual{
+      height:400px;
+  }
+
+  .visual_i{
+      max-width:calc(100% - 64px);
+      padding-top:100px;
+  }
+
+  .visual_text{
+      display:none;
+  }
+
+  .competition_i{
+      max-width:calc(100% - 64px);
+  }
+
+  .competition_slide{
+      width:calc(100vw - 32px);
+      max-width:none;
+      overflow:hidden;
+  }
+
+  .competition_slide .swiper-wrapper{
+      gap:16px; 
+      justify-content:flex-start;
+  }
+
+
+
+  .program_bg {
+  background-image:url("../img/bg\ \(1\).png");
+  }
+
+  .invitation .program_intro img,
+  .special .program_intro img{
+    display:none;
+  }
+    
+  .invitation .program_body,
+  .special .program_body{
+    display:block;
+  }
+
+  .invitation .program_intro,
+  .special .program_intro{
+    width:100%;
+    gap:16px;
+    margin-bottom:56px;
+  }
+
+  .invitation_slide .swiper-wrapper,
+  .special_slide .swiper-wrapper{
+      gap:16px;
+  }
+
+  .invitation .slide_area,
+  .special .slide_area{
+      width:calc(100vw - 32px);
+      max-width: none;
+      overflow:hidden;
+  }
+  
+
+  .invitation .program_intro h3,
+  .special .program_intro h3,
+
+  .invitation .program_intro p,
+  .special .program_intro p{
+    text-align:left;
+  }
 
   .side_btn{
-    right:20px;
-    bottom:24px;
-
-    gap:8px;
+    display:none;
   }
 
-  .side_btn a{
-    width:48px;
-    height:48px;
+}
 
-    border-radius:12px;
+@media screen and (max-width:767px){
+
+    header{
+    height:80px;
   }
 
-  .top_btn{
-    font-size:14px;
+  .header_i{
+    max-width:calc(100% - 40px);
   }
 
-  .ticket_btn i,
-  .ticket_btn svg{
-    width:20px;
-    height:20px;
-    font-size:20px;
+  .icon{
+    gap:16px;
   }
 
-  .ticket_btn span{
+  .visual{
+    height:280px;
+  }
+
+  .visual_i{
+    max-width:calc(100% - 40px);
+    height:100%;
+  }
+
+  .visual_title h1{
+    font-size:28px;
+  }
+
+  .visual_title p{
+    font-size:22px;
+  }
+
+
+
+.program_tab{
+    width:100%;
+    height:50px;
+
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    border-bottom:1px solid #7A7A7A;
+
+    -webkit-overflow-scrolling:touch;
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+}
+
+.program_tab::-webkit-scrollbar{
+    display:none;
+}
+
+.program_tab ul{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+
+    width:max-content;
+    min-width:100%; 
+
+    gap:16px;
+
+    padding:0 20px;
+
+    flex-wrap:nowrap;
+}
+
+.program_tab li{
+    flex:0 0 auto;  
+}
+
+.program_tab li a{
+    width:80px;
+    height:50px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:16px;
+    font-weight:400;
+    line-height:160%;
+
+    color:#7A7A7A;
+}
+
+.program_tab li.active a{
+    color:#FF6E40;
+    font-weight:600;
+    border-bottom:5px solid #FF6E40;
+}
+
+
+.opening_card{
+    height:500px;
+}
+
+.opening_text{
+    width:auto;
+    left:32px;
+    right:32px;
+    bottom:32px;
+}
+
+.opening_text .label{
+    font-size:28px;
+}
+
+.opening_text h3{
+    font-size:22px;
+}
+
+.opening .section_title h2{
+    font-size:28px;
+}
+
+.opening_text .eng,
+.opening_text .info,
+.opening_text .desc{
+    font-size:16px;
+}
+
+.competition .section_head{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:32px;
+}
+
+.competition .section_title{
+    gap:16px;               
+}
+
+.competition .section_title h2{
+    font-size:28px;
+}
+
+.competition .section_title p{
+    font-size:16px;
+}
+
+
+.competition .more{
+    font-size:16px;
+}
+
+
+.competition_slide .swiper-slide,
+.competition .film_card{
+    width:302px;
+    height:340px;
+}
+
+.competition .film_img{
+    height:170px;
+}
+
+.competition .film_text{
+    height:170px;
+    padding:17px;
+}
+
+.competition .film_text h3{
+    font-size:18px;
+}
+
+.competition .film_text .eng{
     font-size:9px;
+}
+
+.competition .film_text .director,
+.competition .film_text .info{
+    font-size:14px;
+}
+
+/* 주황 라벨 - 글자 길이에 따라 자동 */
+.competition .film_img .label{
+    width:auto;
+    min-width:0;
+    height:33px;
+    padding:6px 13px;
+
+    font-size:14px;
+    line-height:1.4;
+
+    border-radius:10px 0 10px 0;
+
+    white-space:nowrap;
+}
+
+  .competition_i{
+    display:flex;
+    flex-direction:column;
   }
+
+  .competition .section_head{
+    display:contents;
+  }
+
+  .competition .section_title{
+    order:1;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-bottom:56px;
+  }
+
+  .competition .slide_wrap{
+    order:2;
+  }
+
+  .competition .more{
+    order:3;
+    align-self:center;
+    margin-top:32px;
+  }
+
+/* invitation & special */
+
+.invitation_i,
+.special_i{
+    display:flex;
+    flex-direction:column;
+}
+
+.invitation .section_head,
+.special .section_head{
+    display:contents;
+}
+
+.invitation .section_title,
+.special .section_title{
+    gap:16px;
+    margin-bottom:40px;
+}
+
+.invitation .section_title h2,
+.special .section_title h2{
+    font-size:28px;
+}
+
+.invitation .section_title p,
+.special .section_title p{
+    font-size:16px;
+}
+
+.invitation .program_body,
+.special .program_body{
+    order:2;
+}
+
+.invitation .more,
+.special .more{
+    font-size:16px
+}
+
+.invitation .program_intro,
+.special .program_intro{
+    gap:8px;
+    margin-bottom:40px;
+}
+
+.invitation .program_intro h3,
+.special .program_intro h3{
+    font-size:20px;
+}
+
+.invitation .program_intro p,
+.special .program_intro p{
+    font-size:16px;
+    font-weight:600;
+}
+
+.invitation .slide_area,
+.special .slide_area{
+    width:calc(100vw - 20px);
+}
+
+.invitation_slide .swiper-wrapper,
+.special_slide .swiper-wrapper{
+    gap:16px;
+}
+
+.invitation_slide .swiper-slide,
+.special_slide .swiper-slide{
+    width:219px;
+}
+
+.invitation .film_card,
+.special .film_card{
+    height:247px;
+}
+
+.invitation .film_img,
+.special .film_img{
+    height:124px;
+}
+
+.invitation .film_img .label,
+.special .film_img .label{
+    min-width:0;
+    height:28px;
+    padding:5px 10px;
+    border-radius:8px 0;
+    font-size:12px;
+}
+
+.invitation .film_text,
+.special .film_text{
+    height:123px;
+    padding:16px;
+}
+
+.invitation .film_text h3,
+.special .film_text h3{
+    font-size:14px;
+}
+
+.invitation .film_text .eng,
+.special .film_text .eng,
+.invitation .film_text .director,
+.special .film_text .director,
+.invitation .film_text .info,
+.special .film_text .info{
+    font-size:12px;
+}
+
+.invitation .film_text .director,
+.special .film_text .director{
+    margin-top:8px;
+}
+
+}
