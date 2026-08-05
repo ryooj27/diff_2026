@@ -1437,7 +1437,7 @@ footer {
   .competition .more{
     order:3;
     align-self:center;
-    margin-top:32px;
+    margin-top:68px;
   }
 
 /* invitation & special */
@@ -1476,7 +1476,10 @@ footer {
 
 .invitation .more,
 .special .more{
-    font-size:16px
+    font-size:16px;
+    order:3;
+    align-self:center;
+    margin-top:40px;
 }
 
 .invitation .program_intro,
@@ -1555,4 +1558,16 @@ footer {
     margin-top:8px;
 }
 
+  .footer_i{
+    flex-direction:column;
+    gap:24px;
+  }
+
+  .footer_logo img{
+    width:110px;
+  }
+
+  .footer_info{
+    font-size: 9px;
+  }
 }
