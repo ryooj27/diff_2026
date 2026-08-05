@@ -1159,7 +1159,7 @@ footer {
   line-height:1.6;
 }
 
-/* 등급안내만 2열 */
+
 
 .legend_box:last-child ul{
   display:grid;
@@ -1314,5 +1314,399 @@ footer{
   margin:0 auto;
 }
 
+
+}
+
+
+
+@media screen and (max-width:600px){
+
+/* =====================
+   HEADER
+===================== */
+
+header{
+  height:70px;
+}
+
+.header_i{
+  max-width:calc(100% - 32px);
+}
+
+.logo img{
+  width:76px;
+}
+
+.icon{
+  gap:16px;
+}
+
+.icon i,
+.icon svg{
+  width:22px;
+  height:22px;
+  font-size:22px;
+}
+
+
+/* =====================
+   GUIDE / LAYOUT
+===================== */
+
+.guide{
+  padding-top:70px;
+}
+
+.guide_i{
+  width:100%;
+  max-width:calc(100% - 40px);
+}
+
+.schedule .guide_i > *,
+.ticket .guide_i > *,
+.notice .guide_i > *,
+.schedule_content,
+.theater,
+.table_wrap,
+.ticket_content,
+.ticket_note,
+.ticket_tab,
+.date_tab,
+.legend{
+  min-width:0;
+}
+
+html,
+body{
+  overflow-x:hidden;
+}
+
+
+/* =====================
+   SECTION TITLE
+===================== */
+
+.section_title > span,
+.section_title h2{
+  font-size:28px;
+}
+
+.section_title p{
+  margin-top:16px;
+  font-size:14px;
+  line-height:1.5;
+}
+
+.more{
+  padding:10px 16px;
+  font-size:14px;
+}
+
+
+/* =====================
+   FIRST
+===================== */
+
+.first{
+  padding:64px 0 80px;
+}
+
+.step_list{
+  margin-top:40px;
+  row-gap:32px;
+  column-gap:8px;
+}
+
+.step_list li{
+  width:auto;
+}
+
+.step_icon{
+  width:64px;
+  height:64px;
+  margin:0 auto 12px;
+  font-size:26px;
+}
+
+.step_list li > span{
+  font-size:14px;
+}
+
+.step_list h3{
+  font-size:14px;
+}
+
+
+/* =====================
+   SCHEDULE
+===================== */
+
+.schedule{
+  padding-bottom:80px;
+}
+
+.schedule .guide_i{
+  row-gap:32px;
+}
+
+.date_tab{
+  height:auto;
+  overflow-x:auto;
+  justify-content:flex-start;
+  gap:16px;
+
+  -ms-overflow-style:none;
+  scrollbar-width:none;
+}
+
+.date_tab::-webkit-scrollbar{
+  display:none;
+}
+
+.date_tab button{
+  flex:0 0 auto;
+  padding:10px 0;
+  font-size:16px;
+  white-space:nowrap;
+}
+
+.legend{
+  display:flex;
+  align-items:flex-start;
+  gap:20px;
+
+  width:100%;
+  margin:0 auto;
+  padding:0;
+
+  box-shadow:none;
+}
+
+.legend_box{
+  flex:1;
+  min-width:0;
+}
+
+.legend_box:first-child,
+.legend_box:last-child{
+  width:auto;
+}
+
+.legend_box h3{
+  margin-bottom:16px;
+
+  font-size:22px;
+  font-weight:600;
+  line-height:1.4;
+}
+
+.legend_box ul{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.legend_box li{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  width:100%;
+  min-height:24px;
+}
+
+.legend_box li p{
+  min-width:0;
+
+  font-size:14px;
+  font-weight:600;
+  line-height:1.6;
+  color:#7A7A7A;
+}
+
+.tag{
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+
+  height:25px;
+  padding:0 10px;
+  border-radius:16px;
+
+  font-size:12px;
+  font-weight:700;
+  color:#fff;
+}
+
+.age{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+
+  width:24px;
+  height:24px;
+  border-radius:50%;
+
+  font-size:12px;
+  font-weight:700;
+  color:#fff;
+}
+
+.legend_box:last-child ul{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:8px;
+}
+
+.legend_box:last-child li{
+  width:100%;
+}
+
+
+.table_wrap{
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+.table_wrap th,
+.table_wrap td{
+  height:52px;
+  padding-left:8px;
+
+  font-size:12px;
+}
+
+.table_wrap thead th,
+.table_wrap tbody td{
+  font-size:12px;
+}
+
+.tag,
+.age{
+  font-size:12px;
+}
+
+.tag{
+  height:20px;
+  padding:8px 8px;
+}
+
+.age{
+  width:20px;
+  height:20px;
+}
+
+
+/* =====================
+   TICKET
+===================== */
+
+.ticket{
+  padding-bottom:120px;
+}
+
+.ticket_top .section_title{
+  text-align:center;
+}
+
+.ticket_tab{
+  height:auto;
+  justify-content:space-between;
+  gap:20px;
+
+  -ms-overflow-style:none;
+  scrollbar-width:none;
+}
+
+.ticket_tab::-webkit-scrollbar{
+  display:none;
+}
+
+.ticket_tab button{
+  flex:0 0 auto;
+  padding:10px 0;
+  font-size:16px;
+  white-space:nowrap;
+}
+
+.ticket_content .table_wrap td{
+  height:64px;
+}
+
+
+/* =====================
+   NOTICE
+===================== */
+
+.notice{
+  padding-bottom:80px;
+}
+
+.notice .guide_i{
+  row-gap:32px;
+}
+
+.notice_list{
+  padding-left:20px;
+  font-size:15px;
+  line-height:1.9;
+}
+
+
+/* =====================
+   PLACE
+===================== */
+
+.place{
+  padding-bottom:80px;
+}
+
+.place_list{
+  margin-top:40px;
+  gap:16px;
+}
+
+.place_card{
+  height:220px;
+}
+
+.place_text{
+  left:20px;
+  bottom:24px;
+}
+
+.place_text h3{
+  font-size:20px;
+}
+
+.place_text p{
+  font-size:14px;
+}
+
+
+/* =====================
+   FOOTER
+===================== */
+
+footer{
+  padding:40px 0;
+}
+
+.footer_i{
+  flex-direction:column;
+  align-items:flex-start;
+  gap:24px;
+}
+
+.footer_logo img{
+  width:110px;
+}
+
+.footer_info{
+  font-size:12px;
+  line-height:1.7;
+}
 
 }
