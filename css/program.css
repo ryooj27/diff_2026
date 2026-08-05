@@ -1258,160 +1258,154 @@ footer {
 
 
 
-.program_tab{
-    width:100%;
-    height:50px;
+  .program_tab{
+      width:100%;
+      height:50px;
 
-    overflow-x:auto;
-    overflow-y:hidden;
+      -webkit-overflow-scrolling:touch;
+      -ms-overflow-style:none;
+      scrollbar-width:none;
+  }
 
-    border-bottom:1px solid #7A7A7A;
+  .program_tab::-webkit-scrollbar{
+      display:none;
+  }
 
-    -webkit-overflow-scrolling:touch;
-    -ms-overflow-style:none;
-    scrollbar-width:none;
-}
+  .program_tab ul{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
 
-.program_tab::-webkit-scrollbar{
-    display:none;
-}
+      width:max-content;
+      min-width:100%; 
 
-.program_tab ul{
-    display:flex;
-    align-items:center;
-    justify-content:flex-start;
+      gap:16px;
 
-    width:max-content;
-    min-width:100%; 
+      padding:0 20px;
 
-    gap:16px;
+      flex-wrap:nowrap;
+  }
 
-    padding:0 20px;
+  .program_tab li{
+      flex:0 0 auto;  
+  }
 
-    flex-wrap:nowrap;
-}
+  .program_tab li a{
+      width:80px;
+      height:50px;
 
-.program_tab li{
-    flex:0 0 auto;  
-}
+      display:flex;
+      justify-content:center;
+      align-items:center;
 
-.program_tab li a{
-    width:80px;
-    height:50px;
+      font-size:16px;
+      font-weight:400;
+      line-height:160%;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+      color:#7A7A7A;
+  }
 
-    font-size:16px;
-    font-weight:400;
-    line-height:160%;
-
-    color:#7A7A7A;
-}
-
-.program_tab li.active a{
-    color:#FF6E40;
-    font-weight:600;
-    border-bottom:5px solid #FF6E40;
-}
+  .program_tab li.active a{
+      color:#FF6E40;
+      font-weight:600;
+      border-bottom:5px solid #FF6E40;
+  }
 
 
-.opening_card{
-    height:500px;
-}
+  .opening_card{
+      height:500px;
+  }
 
-.opening_text{
-    width:auto;
-    left:32px;
-    right:32px;
-    bottom:32px;
-}
+  .opening_text{
+      width:auto;
+      left:32px;
+      right:32px;
+      bottom:32px;
+  }
 
-.opening_text .label{
-    font-size:28px;
-}
+  .opening_text .label{
+      font-size:28px;
+  }
 
-.opening_text h3{
-    font-size:22px;
-}
+  .opening_text h3{
+      font-size:22px;
+  }
 
-.opening .section_title h2{
-    font-size:28px;
-}
+  .opening .section_title h2{
+      font-size:28px;
+  }
 
-.opening_text .eng,
-.opening_text .info,
-.opening_text .desc{
-    font-size:16px;
-}
+  .opening_text .eng,
+  .opening_text .info,
+  .opening_text .desc{
+      font-size:16px;
+  }
 
-.competition .section_head{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:32px;
-}
+  .competition .section_head{
+      flex-direction:column;
+      align-items:flex-start;
+      gap:32px;
+  }
 
-.competition .section_title{
-    gap:16px;               
-}
+  .competition .section_title{
+      gap:16px;               
+  }
 
-.competition .section_title h2{
-    font-size:28px;
-}
+  .competition .section_title h2{
+      font-size:28px;
+  }
 
-.competition .section_title p{
-    font-size:16px;
-}
-
-
-.competition .more{
-    font-size:16px;
-}
+  .competition .section_title p{
+      font-size:16px;
+  }
 
 
-.competition_slide .swiper-slide,
-.competition .film_card{
-    width:302px;
-    height:340px;
-}
+  .competition .more{
+      font-size:16px;
+  }
 
-.competition .film_img{
-    height:170px;
-}
 
-.competition .film_text{
-    height:170px;
-    padding:17px;
-}
+  .competition_slide .swiper-slide,
+  .competition .film_card{
+      width:302px;
+      height:340px;
+  }
 
-.competition .film_text h3{
-    font-size:18px;
-}
+  .competition .film_img{
+      height:170px;
+  }
 
-.competition .film_text .eng{
-    font-size:9px;
-}
+  .competition .film_text{
+      height:170px;
+      padding:17px;
+  }
 
-.competition .film_text .director,
-.competition .film_text .info{
-    font-size:14px;
-}
+  .competition .film_text h3{
+      font-size:18px;
+  }
 
-/* 주황 라벨 - 글자 길이에 따라 자동 */
-.competition .film_img .label{
-    width:auto;
-    min-width:0;
-    height:33px;
-    padding:6px 13px;
+  .competition .film_text .eng{
+      font-size:9px;
+  }
 
-    font-size:14px;
-    line-height:1.4;
+  .competition .film_text .director,
+  .competition .film_text .info{
+      font-size:14px;
+  }
 
-    border-radius:10px 0 10px 0;
+  .competition .film_img .label{
+      width:auto;
+      min-width:0;
+      height:33px;
+      padding:6px 13px;
 
-    white-space:nowrap;
-}
+      font-size:14px;
+      line-height:1.4;
+
+      border-radius:10px 0 10px 0;
+
+      white-space:nowrap;
+  }
 
   .competition_i{
     display:flex;
@@ -1440,123 +1434,126 @@ footer {
     margin-top:68px;
   }
 
-/* invitation & special */
+  /* invitation & special */
 
-.invitation_i,
-.special_i{
-    display:flex;
-    flex-direction:column;
-}
+  .invitation_i,
+  .special_i{
+      display:flex;
+      flex-direction:column;
+  }
 
-.invitation .section_head,
-.special .section_head{
-    display:contents;
-}
+  .invitation .section_head,
+  .special .section_head{
+      display:contents;
+  }
 
-.invitation .section_title,
-.special .section_title{
-    gap:16px;
-    margin-bottom:40px;
-}
+  .invitation .section_title,
+  .special .section_title{
+      gap:16px;
+      margin-bottom:40px;
+  }
 
-.invitation .section_title h2,
-.special .section_title h2{
-    font-size:28px;
-}
+  .invitation .section_title h2,
+  .special .section_title h2{
+      font-size:28px;
+  }
 
-.invitation .section_title p,
-.special .section_title p{
-    font-size:16px;
-}
+  .invitation .section_title p,
+  .special .section_title p{
+      font-size:16px;
+  }
 
-.invitation .program_body,
-.special .program_body{
-    order:2;
-}
+  .invitation .program_body,
+  .special .program_body{
+      order:2;
+  }
 
-.invitation .more,
-.special .more{
-    font-size:16px;
-    order:3;
-    align-self:center;
-    margin-top:40px;
-}
+  .invitation .more,
+  .special .more{
+      font-size:16px;
+      order:3;
+      align-self:center;
+      margin-top:40px;
+  }
 
-.invitation .program_intro,
-.special .program_intro{
-    gap:8px;
-    margin-bottom:40px;
-}
+  .invitation .program_intro,
+  .special .program_intro{
+      gap:8px;
+      margin-bottom:40px;
+  }
 
-.invitation .program_intro h3,
-.special .program_intro h3{
-    font-size:20px;
-}
+  .invitation .program_intro h3,
+  .special .program_intro h3{
+      font-size:20px;
+  }
 
-.invitation .program_intro p,
-.special .program_intro p{
-    font-size:16px;
-    font-weight:600;
-}
+  .invitation .program_intro p,
+  .special .program_intro p{
+      font-size:16px;
+      font-weight:600;
+  }
 
-.invitation .slide_area,
-.special .slide_area{
-    width:calc(100vw - 20px);
-}
+  .invitation .slide_area,
+  .special .slide_area{
+      width:calc(100vw - 20px);
+  }
 
-.invitation_slide .swiper-wrapper,
-.special_slide .swiper-wrapper{
-    gap:16px;
-}
+  .invitation_slide .swiper-wrapper,
+  .special_slide .swiper-wrapper{
+      gap:16px;
+  }
 
-.invitation_slide .swiper-slide,
-.special_slide .swiper-slide{
-    width:219px;
-}
+  .invitation_slide .swiper-slide,
+  .special_slide .swiper-slide{
+      width:219px;
+  }
 
-.invitation .film_card,
-.special .film_card{
-    height:247px;
-}
+  .invitation .film_card,
+  .special .film_card{
+      height:247px;
+  }
 
-.invitation .film_img,
-.special .film_img{
-    height:124px;
-}
+  .invitation .film_img,
+  .special .film_img{
+      height:124px;
+  }
 
-.invitation .film_img .label,
-.special .film_img .label{
-    min-width:0;
-    height:28px;
-    padding:5px 10px;
-    border-radius:8px 0;
-    font-size:12px;
-}
+  .invitation .film_img .label,
+  .special .film_img .label{
+      min-width:0;
+      height:28px;
+      padding:5px 10px;
+      border-radius:8px 0;
+      font-size:12px;
+  }
 
-.invitation .film_text,
-.special .film_text{
-    height:123px;
-    padding:16px;
-}
+  .invitation .film_text,
+  .special .film_text{
+      height:123px;
+      padding:16px;
+  }
 
-.invitation .film_text h3,
-.special .film_text h3{
-    font-size:14px;
-}
+  .invitation .film_text h3,
+  .special .film_text h3{
+      font-size:14px;
+  }
 
-.invitation .film_text .eng,
-.special .film_text .eng,
-.invitation .film_text .director,
-.special .film_text .director,
-.invitation .film_text .info,
-.special .film_text .info{
-    font-size:12px;
-}
+  .invitation .film_text .eng,
+  .special .film_text .eng,
+  .invitation .film_text .director,
+  .special .film_text .director,
+  .invitation .film_text .info,
+  .special .film_text .info{
+      font-size:12px;
+  }
 
-.invitation .film_text .director,
-.special .film_text .director{
-    margin-top:8px;
-}
+  .invitation .film_text .director,
+  .special .film_text .director{
+      margin-top:8px;
+  }
+
+  /* footer */
+
 
   .footer_i{
     flex-direction:column;
@@ -1570,4 +1567,5 @@ footer {
   .footer_info{
     font-size: 9px;
   }
+
 }
