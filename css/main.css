@@ -146,7 +146,7 @@ header {
 
 
 
-.header_nav > ul > li > a::after {
+.header_nav a.nav_link::after {
 
   content:"";
 
@@ -167,9 +167,25 @@ header {
 
 
 
-.header_nav > ul > li > a:hover::after {
+.header_nav a.nav_link:hover::after {
 
   width:120%;
+
+}
+
+
+/* mobile accordion toggle button (hidden on desktop) */
+
+.mega_head {
+
+  display:flex;
+  align-items:center;
+
+}
+
+.mega_toggle {
+
+  display:none;
 
 }
 
@@ -1699,8 +1715,44 @@ footer {
     border-bottom:1px solid #eee;
   }
 
-  .header_nav > ul > li > a{
+  .header_nav a.nav_link{
     font-size:20px;
+  }
+
+  .mega_head{
+    width:100%;
+    justify-content:space-between;
+  }
+
+  .mega_toggle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:32px;
+    height:32px;
+    flex-shrink:0;
+
+    color:var(--black);
+
+    transition:color .3s ease;
+  }
+
+  .mega_toggle i{
+    font-size:15px;
+    transition:transform .3s ease;
+  }
+
+  .has_mega.open .mega_toggle{
+    color:var(--point);
+  }
+
+  .has_mega.open .mega_toggle i{
+    transform:rotate(180deg);
+  }
+
+  .has_mega.open .nav_link{
+    color:var(--point);
   }
 
   .mega_panel{
@@ -1716,10 +1768,19 @@ footer {
     pointer-events:auto;
 
     min-width:0;
-    margin-top:12px;
+    max-height:0;
+    margin-top:0;
     padding:0 0 0 12px;
 
+    overflow:hidden;
+
     border-radius:0;
+
+    transition:max-height .35s ease, margin-top .35s ease;
+  }
+
+  .has_mega.open .mega_panel{
+    margin-top:12px;
   }
 
   .mega_panel a{
@@ -1876,12 +1937,7 @@ footer {
   }
 
   .about_text{
-    width: 500px;
-    margin-top: 56px;
-
-    font-size:16px;
-    font-weight: normal;
-    line-height: 1.6;
+    font-size:18px;
   }
 
   .about_number{
@@ -2120,24 +2176,22 @@ footer {
   }
 
   .about_heading{
-    margin-top:28px;
+    margin-top:0;
 
     font-size:26px;
   }
 
   .about_text{
-    margin-top:56px;
+    margin-top:24px;
 
-    font-size:16px;
-    line-height: 1.6;
-    font-weight: normal;
+    font-size:15px;
   }
 
   .btn_line{
     
     justify-content:center;
 
-    margin-top:32px;
+    margin-top:28px;
     padding:14px 14px;
 
     font-size:16px;

@@ -1,3 +1,131 @@
+/* ============================
+   Mobile Navigation (hamburger)
+   ※ 다른 기능(Swiper 등)에서 에러가 나도
+     메뉴는 항상 동작하도록 파일 맨 위에 둠
+============================ */
+
+(function () {
+
+  const menuBtn = document.querySelector(".menu_btn");
+  const headerNav = document.querySelector("#headerNav");
+  const navOverlay = document.querySelector("#navOverlay");
+
+  if (!menuBtn || !headerNav || !navOverlay) return;
+
+  const menuIcon = menuBtn.querySelector("i");
+
+  const megaToggles = headerNav.querySelectorAll(".mega_toggle");
+  const navLinks = headerNav.querySelectorAll(".mega_head > .nav_link");
+
+  function closeAccordion(li) {
+    const panel = li.querySelector(".mega_panel");
+    const toggleBtn = li.querySelector(".mega_toggle");
+
+    li.classList.remove("open");
+    panel.style.maxHeight = "";
+
+    if (toggleBtn) {
+      toggleBtn.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  function toggleAccordion(li) {
+    const panel = li.querySelector(".mega_panel");
+    const toggleBtn = li.querySelector(".mega_toggle");
+    const isOpen = li.classList.contains("open");
+
+    // 다른 항목은 닫고 하나만 펼쳐지게
+    headerNav.querySelectorAll(".has_mega.open").forEach(function (openLi) {
+      if (openLi !== li) closeAccordion(openLi);
+    });
+
+    if (isOpen) {
+      closeAccordion(li);
+    } else {
+      li.classList.add("open");
+      panel.style.maxHeight = panel.scrollHeight + "px";
+
+      if (toggleBtn) {
+        toggleBtn.setAttribute("aria-expanded", "true");
+      }
+    }
+  }
+
+  megaToggles.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      toggleAccordion(btn.closest(".has_mega"));
+    });
+  });
+
+  // 태블릿/모바일에서는 상단 메뉴 텍스트를 눌러도 펼침/접힘 동작
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      if (window.innerWidth <= 1024) {
+        event.preventDefault();
+        toggleAccordion(link.closest(".has_mega"));
+      }
+    });
+  });
+
+  function closeAllAccordions() {
+    headerNav.querySelectorAll(".has_mega.open").forEach(closeAccordion);
+  }
+
+  function openNav() {
+    headerNav.classList.add("active");
+    navOverlay.classList.add("active");
+    document.body.classList.add("nav_open");
+
+    if (menuIcon) {
+      menuIcon.classList.remove("fa-bars");
+      menuIcon.classList.add("fa-xmark");
+    }
+
+    menuBtn.setAttribute("aria-expanded", "true");
+    menuBtn.setAttribute("aria-label", "메뉴 닫기");
+  }
+
+  function closeNav() {
+    headerNav.classList.remove("active");
+    navOverlay.classList.remove("active");
+    document.body.classList.remove("nav_open");
+
+    if (menuIcon) {
+      menuIcon.classList.remove("fa-xmark");
+      menuIcon.classList.add("fa-bars");
+    }
+
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.setAttribute("aria-label", "메뉴 열기");
+
+    closeAllAccordions();
+  }
+
+  menuBtn.addEventListener("click", function () {
+    if (headerNav.classList.contains("active")) {
+      closeNav();
+    } else {
+      openNav();
+    }
+  });
+
+  navOverlay.addEventListener("click", closeNav);
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeNav();
+    }
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 1024) {
+      closeNav();
+    }
+  });
+
+})();
+
+
 function PanoramaEffect({ swiper, extendParams, on }) {
 
   extendParams({
@@ -185,69 +313,6 @@ document.addEventListener("keydown", function (event) {
     closeVideo();
   }
 });
-
-/* ============================
-   Mobile Navigation (hamburger)
-============================ */
-
-const menuBtn = document.querySelector(".menu_btn");
-const headerNav = document.querySelector("#headerNav");
-const navOverlay = document.querySelector("#navOverlay");
-const menuIcon = menuBtn ? menuBtn.querySelector("i") : null;
-
-function openNav() {
-  headerNav.classList.add("active");
-  navOverlay.classList.add("active");
-  document.body.classList.add("nav_open");
-
-  if (menuIcon) {
-    menuIcon.classList.remove("fa-bars");
-    menuIcon.classList.add("fa-xmark");
-  }
-
-  menuBtn.setAttribute("aria-expanded", "true");
-  menuBtn.setAttribute("aria-label", "메뉴 닫기");
-}
-
-function closeNav() {
-  headerNav.classList.remove("active");
-  navOverlay.classList.remove("active");
-  document.body.classList.remove("nav_open");
-
-  if (menuIcon) {
-    menuIcon.classList.remove("fa-xmark");
-    menuIcon.classList.add("fa-bars");
-  }
-
-  menuBtn.setAttribute("aria-expanded", "false");
-  menuBtn.setAttribute("aria-label", "메뉴 열기");
-}
-
-if (menuBtn && headerNav && navOverlay) {
-
-  menuBtn.addEventListener("click", function () {
-    if (headerNav.classList.contains("active")) {
-      closeNav();
-    } else {
-      openNav();
-    }
-  });
-
-  navOverlay.addEventListener("click", closeNav);
-
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-      closeNav();
-    }
-  });
-
-  window.addEventListener("resize", function () {
-    if (window.innerWidth > 1024) {
-      closeNav();
-    }
-  });
-
-}
 
 /* ============================
    About DIFF count-up animation
