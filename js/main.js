@@ -229,6 +229,23 @@ function PanoramaEffect({ swiper, extendParams, on }) {
 
 
 
+const posterSlides = document.querySelectorAll(".poster_slide .swiper-slide");
+const posterNameEl = document.querySelector(".poster_name");
+const posterDateEl = document.querySelector(".poster_date");
+const posterPlaceEl = document.querySelector(".poster_place");
+
+function updatePosterInfo(swiper) {
+
+  const activeSlide = posterSlides[swiper.realIndex];
+
+  if (!activeSlide) return;
+
+  if (posterNameEl) posterNameEl.textContent = activeSlide.dataset.name || "";
+  if (posterDateEl) posterDateEl.textContent = activeSlide.dataset.date || "";
+  if (posterPlaceEl) posterPlaceEl.textContent = activeSlide.dataset.place || "";
+
+}
+
 const posterSwiper = new Swiper(".poster_slide",{
 
 
@@ -264,6 +281,15 @@ const posterSwiper = new Swiper(".poster_slide",{
     prevEl:".poster_prev",
 
     nextEl:".poster_next"
+
+  },
+
+
+  on:{
+
+    init:function () { updatePosterInfo(this); },
+
+    slideChange:function () { updatePosterInfo(this); }
 
   }
 

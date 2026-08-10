@@ -4,7 +4,8 @@
   font-family: '어그로';
   src: url(../font/SB\ 어그로\ L.ttf);
 }
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+/* Pretendard 폰트는 index.html <head>에서 <link>로 미리 불러옵니다
+   (@import는 발견이 늦어 폰트가 늦게 적용되며 레이아웃이 흔들리는 원인이 됨) */
 
 * {
   margin:0;
@@ -15,6 +16,8 @@
 
 html {
   overflow-x:hidden;
+  scrollbar-gutter:stable;
+  overflow-y:scroll;
 }
 
 body {
@@ -2157,6 +2160,8 @@ footer {
 
   .about_title h2{
     font-size:32px;
+    line-height:1.3;
+    letter-spacing:-0.02em;
   }
 
   .about_contents{
@@ -2168,12 +2173,16 @@ footer {
     margin-top:0;
 
     font-size:26px;
+    line-height:1.4;
+    letter-spacing:-0.02em;
   }
 
   .about_text{
     margin-top:24px;
 
     font-size:15px;
+    line-height:1.7;
+    letter-spacing:-0.01em;
   }
 
   .btn_line{
