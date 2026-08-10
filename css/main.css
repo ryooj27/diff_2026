@@ -146,33 +146,6 @@ header {
 
 
 
-.header_nav a.nav_link::after {
-
-  content:"";
-
-  position:absolute;
-
-  left:50%;
-  bottom:-12px;
-
-  width:0;
-  height:5px;
-
-  background:var(--point);
-
-  transform:translateX(-50%);
-  transition:.3s;
-
-}
-
-
-
-.header_nav a.nav_link:hover::after {
-
-  width:120%;
-
-}
-
 
 /* mobile accordion toggle button (hidden on desktop) */
 
@@ -230,7 +203,7 @@ header {
 
   font-size:15px;
   font-weight:500;
-  color:var();
+  color:var(--black);
 
   white-space:nowrap;
 
@@ -1738,8 +1711,11 @@ footer {
     transition:color .3s ease;
   }
 
-  .mega_toggle i{
+  .mega_toggle i,
+  .mega_toggle svg{
     font-size:15px;
+    width:15px;
+    height:15px;
     transition:transform .3s ease;
   }
 
@@ -1747,25 +1723,29 @@ footer {
     color:var(--point);
   }
 
-  .has_mega.open .mega_toggle i{
+  /* Font Awesome 스크립트가 <i>를 런타임에 <svg>로 자동 치환하기 때문에
+     ".mega_toggle i" 만으로는 회전이 안 걸릴 수 있어, 태그와 상관없이
+     항상 정확한 aria-expanded 속성 기준으로 회전을 건다 */
+  .mega_toggle[aria-expanded="true"] i,
+  .mega_toggle[aria-expanded="true"] svg{
     transform:rotate(180deg);
   }
 
   .has_mega.open .nav_link{
-    color:var(--point);
+    color:var(--point) !important;
   }
 
   .mega_panel{
-    position:static;
+    position:static !important;
 
-    transform:none;
+    transform:none !important;
 
-    display:flex;
+    display:flex !important;
     flex-direction:column;
 
-    opacity:1;
-    visibility:visible;
-    pointer-events:auto;
+    opacity:1 !important;
+    visibility:visible !important;
+    pointer-events:auto !important;
 
     min-width:0;
     max-height:0;
@@ -1775,17 +1755,26 @@ footer {
     overflow:hidden;
 
     border-radius:0;
+    background:transparent;
 
     transition:max-height .35s ease, margin-top .35s ease;
   }
 
+  /* 서브메뉴 개수가 늘어나도 안전하게 펼쳐지도록 넉넉한 고정값 사용
+     (JS의 scrollHeight 계산에 의존하면 타이밍에 따라 0으로 측정되어
+     펼쳐지지 않는 것처럼 보이는 문제가 있었음) */
   .has_mega.open .mega_panel{
+    max-height:600px !important;
     margin-top:12px;
   }
 
   .mega_panel a{
+    display:block !important;
     padding:8px 0;
     font-size:15px;
+    color:#181818 !important;
+    opacity:1 !important;
+    visibility:visible !important;
   }
 
   body.nav_open{

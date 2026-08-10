@@ -18,11 +18,9 @@
   const navLinks = headerNav.querySelectorAll(".mega_head > .nav_link");
 
   function closeAccordion(li) {
-    const panel = li.querySelector(".mega_panel");
     const toggleBtn = li.querySelector(".mega_toggle");
 
     li.classList.remove("open");
-    panel.style.maxHeight = "";
 
     if (toggleBtn) {
       toggleBtn.setAttribute("aria-expanded", "false");
@@ -30,7 +28,6 @@
   }
 
   function toggleAccordion(li) {
-    const panel = li.querySelector(".mega_panel");
     const toggleBtn = li.querySelector(".mega_toggle");
     const isOpen = li.classList.contains("open");
 
@@ -43,7 +40,6 @@
       closeAccordion(li);
     } else {
       li.classList.add("open");
-      panel.style.maxHeight = panel.scrollHeight + "px";
 
       if (toggleBtn) {
         toggleBtn.setAttribute("aria-expanded", "true");

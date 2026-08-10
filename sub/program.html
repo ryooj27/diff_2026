@@ -7,7 +7,8 @@
     <title>프로그램 | 대구단편영화제</title>
     <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="../css/program.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/program.css?v=2">
 
     <script
         src="https://kit.fontawesome.com/b031efb8f6.js"
@@ -27,23 +28,115 @@
                 </a>
             </div>
 
-            <nav class="header_nav">
+            <nav class="header_nav" id="headerNav">
                 <ul>
-                    <li><a href="#">대구단편영화제</a></li>
-                    <li class="active"><a href="program.html">프로그램</a></li>
-                    <li><a href="guide.html">관람안내</a></li>
-                    <li><a href="#">출품 &amp; 지원</a></li>
-                    <li><a href="#">커뮤니티</a></li>
-                    <li><a href="#">아카이브</a></li>
+                    <li class="has_mega">
+                        <div class="mega_head">
+                            <a href="#" class="nav_link">대구단편영화제</a>
+                            <button type="button" class="mega_toggle" aria-expanded="false" aria-label="하위메뉴 펼치기">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="mega_panel">
+                            <a href="#">DIFF 소개</a>
+                            <a href="#">개요</a>
+                            <a href="#">연혁</a>
+                            <a href="#">시장&amp;심사위원</a>
+                            <a href="#">포스터&amp;로고</a>
+                            <a href="#">조직&amp;후원</a>
+                        </div>
+                    </li>
+                    <li class="has_mega">
+                        <div class="mega_head">
+                            <a href="program.html" class="nav_link">프로그램</a>
+                            <button type="button" class="mega_toggle" aria-expanded="false" aria-label="하위메뉴 펼치기">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="mega_panel">
+                            <a href="program.html">전체 상영작</a>
+                            <a href="program.html#opening">개막작</a>
+                            <a href="program.html#competition">경쟁부문</a>
+                            <a href="program.html#invitation">초청부문</a>
+                            <a href="program.html#special">특별상영</a>
+                        </div>
+                    </li>
+                    <li class="has_mega">
+                        <div class="mega_head">
+                            <a href="guide.html" class="nav_link">관람안내</a>
+                            <button type="button" class="mega_toggle" aria-expanded="false" aria-label="하위메뉴 펼치기">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="mega_panel">
+                            <a href="guide.html">처음 오셨나요?</a>
+                            <a href="guide.html">상영 일정표</a>
+                            <a href="guide.html">예매 안내</a>
+                            <a href="guide.html">유의사항</a>
+                            <a href="guide.html">행사장 안내</a>
+                        </div>
+                    </li>
+                    <li class="has_mega">
+                        <div class="mega_head">
+                            <a href="#" class="nav_link">출품&amp;지원</a>
+                            <button type="button" class="mega_toggle" aria-expanded="false" aria-label="하위메뉴 펼치기">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="mega_panel">
+                            <a href="#">제27회 출품공모</a>
+                            <a href="#">출품 안내</a>
+                            <a href="#">출품 일정</a>
+                            <a href="#">애플피칭</a>
+                            <a href="#">역대 지원자</a>
+                        </div>
+                    </li>
+                    <li class="has_mega">
+                        <div class="mega_head">
+                            <a href="#" class="nav_link">커뮤니티</a>
+                            <button type="button" class="mega_toggle" aria-expanded="false" aria-label="하위메뉴 펼치기">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="mega_panel">
+                            <a href="#">공지사항</a>
+                            <a href="#">데일리</a>
+                            <a href="#">뉴스</a>
+                            <a href="#">관객리뷰단</a>
+                            <a href="#">1:1문의사항</a>
+                            <a href="#">부대행사</a>
+                        </div>
+                    </li>
+                    <li class="has_mega">
+                        <div class="mega_head">
+                            <a href="#" class="nav_link">아카이브</a>
+                            <button type="button" class="mega_toggle" aria-expanded="false" aria-label="하위메뉴 펼치기">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="mega_panel">
+                            <a href="#">역대 영화제</a>
+                            <a href="#">역대 상영작</a>
+                            <a href="#">역대 수상작</a>
+                            <a href="#">역대 포스터</a>
+                            <a href="#">역대 갤러리</a>
+                        </div>
+                    </li>
                 </ul>
             </nav>
 
             <div class="icon">
-                <a href="#" class="insta">
+                <a href="#" class="insta" aria-label="인스타그램">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
 
-                <button type="button" class="menu_btn">
+                <button
+                    type="button"
+                    class="menu_btn"
+                    aria-label="메뉴 열기"
+                    aria-expanded="false"
+                    aria-controls="headerNav"
+                >
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
@@ -51,6 +144,10 @@
         </div>
     </header>
     <!-- //header -->
+
+    <!-- mobile nav overlay -->
+    <div class="nav_overlay" id="navOverlay"></div>
+    <!-- //mobile nav overlay -->
 
 
 <!-- main -->
@@ -78,7 +175,7 @@
     <!-- tab -->
     <nav class="program_tab">
         <ul>
-            <li class="active">
+            <li>
                 <a href="#filmList">전체 상영작</a>
             </li>
 
@@ -116,7 +213,9 @@
 
                 <div class="slide_wrap">
 
-                    <button type="button" class="opening_prev">
+                    <span class="opening_fixed_label">개막작</span>
+
+                    <button type="button" class="opening_prev" aria-label="이전 개막작">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
 
@@ -135,8 +234,6 @@
                                         >
 
                                         <div class="opening_text">
-                                            <span class="label">개막작</span>
-
                                             <h3>첫여름</h3>
                                             <p class="eng">First Summer</p>
 
@@ -168,8 +265,6 @@
                                         >
 
                                         <div class="opening_text">
-                                            <span class="label">개막작</span>
-
                                             <h3>영화 제목</h3>
                                             <p class="eng">Film Title</p>
 
@@ -200,8 +295,6 @@
                                         >
 
                                         <div class="opening_text">
-                                            <span class="label">개막작</span>
-
                                             <h3>영화 제목</h3>
                                             <p class="eng">Film Title</p>
 
@@ -223,7 +316,7 @@
                         </div>
                     </div>
 
-                    <button type="button" class="opening_next">
+                    <button type="button" class="opening_next" aria-label="다음 개막작">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
 
@@ -254,7 +347,7 @@
 
                 <div class="slide_wrap">
 
-                    <button type="button" class="competition_prev">
+                    <button type="button" class="competition_prev" aria-label="이전 경쟁부문 작품">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
 
@@ -282,6 +375,12 @@
                                             <p class="director">감독 이다영</p>
                                             <p class="info">
                                                 2025 | 극 | 31분 23초
+                                            </p>
+                                        </div>
+
+                                        <div class="film_synopsis">
+                                            <p>
+                                                (시놉시스를 입력해주세요.)
                                             </p>
                                         </div>
 
@@ -318,6 +417,12 @@
                                             </p>
                                         </div>
 
+                                        <div class="film_synopsis">
+                                            <p>
+                                                (시놉시스를 입력해주세요.)
+                                            </p>
+                                        </div>
+
                                     </a>
                                 </article>
 
@@ -346,6 +451,12 @@
                                             <p class="director">감독 김선빈</p>
                                             <p class="info">
                                                 2025 | 극 | 33분 46초
+                                            </p>
+                                        </div>
+
+                                        <div class="film_synopsis">
+                                            <p>
+                                                (시놉시스를 입력해주세요.)
                                             </p>
                                         </div>
 
@@ -380,6 +491,12 @@
                                             </p>
                                         </div>
 
+                                        <div class="film_synopsis">
+                                            <p>
+                                                (시놉시스를 입력해주세요.)
+                                            </p>
+                                        </div>
+
                                     </a>
                                 </article>
 
@@ -389,7 +506,7 @@
                         </div>
                     </div>
 
-                    <button type="button" class="competition_next">
+                    <button type="button" class="competition_next" aria-label="다음 경쟁부문 작품">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
 
@@ -438,7 +555,7 @@
 
                 <div class="slide_area">
 
-                    <button type="button" class="invitation_prev">
+                    <button type="button" class="invitation_prev" aria-label="이전 초청부문 작품">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
 
@@ -468,6 +585,12 @@
                                             <p class="director">감독 박근영</p>
                                             <p class="info">
                                                 2025 | 극 | 15분 1초
+                                            </p>
+                                        </div>
+
+                                        <div class="film_synopsis">
+                                            <p>
+                                                (시놉시스를 입력해주세요.)
                                             </p>
                                         </div>
 
@@ -501,6 +624,12 @@
                                             <p class="director">감독 손태웅</p>
                                             <p class="info">
                                                 2025 | 극 | 25분 53초
+                                            </p>
+                                        </div>
+
+                                        <div class="film_synopsis">
+                                            <p>
+                                                (시놉시스를 입력해주세요.)
                                             </p>
                                         </div>
 
@@ -539,6 +668,12 @@
                                             </p>
                                         </div>
 
+                                        <div class="film_synopsis">
+                                            <p>
+                                                (시놉시스를 입력해주세요.)
+                                            </p>
+                                        </div>
+
                                     </a>
                                 </article>
 
@@ -572,6 +707,12 @@
                                             </p>
                                         </div>
 
+                                        <div class="film_synopsis">
+                                            <p>
+                                                (시놉시스를 입력해주세요.)
+                                            </p>
+                                        </div>
+
                                     </a>
                                 </article>
 
@@ -581,7 +722,7 @@
                         </div>
                     </div>
 
-                    <button type="button" class="invitation_next">
+                    <button type="button" class="invitation_next" aria-label="다음 초청부문 작품">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
 
@@ -629,7 +770,7 @@
 
                 <div class="slide_area">
 
-                    <button type="button" class="special_prev">
+                    <button type="button" class="special_prev" aria-label="이전 특별상영 작품">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
 
@@ -657,6 +798,12 @@
                                             <p class="director">감독 김소영</p>
                                             <p class="info">
                                                 2025 | 극 | 28분 30초
+                                            </p>
+                                        </div>
+
+                                        <div class="film_synopsis">
+                                            <p>
+                                                (시놉시스를 입력해주세요.)
                                             </p>
                                         </div>
 
@@ -691,6 +838,12 @@
                                             </p>
                                         </div>
 
+                                        <div class="film_synopsis">
+                                            <p>
+                                                (시놉시스를 입력해주세요.)
+                                            </p>
+                                        </div>
+
                                     </a>
                                 </article>
 
@@ -719,6 +872,12 @@
                                             <p class="director">감독 이정호</p>
                                             <p class="info">
                                                 2024 | 극 | 19분 50초
+                                            </p>
+                                        </div>
+
+                                        <div class="film_synopsis">
+                                            <p>
+                                                (시놉시스를 입력해주세요.)
                                             </p>
                                         </div>
 
@@ -753,6 +912,12 @@
                                             </p>
                                         </div>
 
+                                        <div class="film_synopsis">
+                                            <p>
+                                                (시놉시스를 입력해주세요.)
+                                            </p>
+                                        </div>
+
                                     </a>
                                 </article>
 
@@ -762,7 +927,7 @@
                         </div>
                     </div>
 
-                    <button type="button" class="special_next">
+                    <button type="button" class="special_next" aria-label="다음 특별상영 작품">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
 
@@ -827,6 +992,10 @@
 
     </div>
   <!-- //side btn -->
+
+  <!-- script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="../js/program.js?v=2"></script>
 
 </body>
 </html>
