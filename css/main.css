@@ -144,6 +144,12 @@ header {
   position:relative;
   display:inline-block;
 
+  transition:color .2s ease;
+
+}
+
+.header_nav a:hover {
+  color:var(--point);
 }
 
 

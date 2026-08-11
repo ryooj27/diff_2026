@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-/* Pretendard 폰트는 program.html <head>에서 <link>로 미리 불러옵니다 */
-
 
 * {
   margin:0;
@@ -22,7 +20,6 @@ body {
   color:#181818;
 }
 
-/* 탭 클릭 시 고정 헤더에 섹션 제목이 가려지지 않도록 여유 확보 */
 #opening,
 #competition,
 #invitation,
@@ -130,6 +127,11 @@ header {
 .header_nav a {
   position:relative;
   display:inline-block;
+  transition:color .2s ease;
+}
+
+.header_nav a:hover {
+  color:var(--point);
 }
 
 .mega_head {
@@ -547,7 +549,6 @@ header {
   overflow:hidden;
 }
 
-/* 슬라이드 전환을 더 부드럽게 (Swiper 기본 ease보다 자연스러운 커브) */
 .opening_slide .swiper-wrapper,
 .competition_slide .swiper-wrapper,
 .invitation_slide .swiper-wrapper,
@@ -605,7 +606,7 @@ header {
   color:var(--point);
 }
 
-/* 슬라이드가 넘어가도 움직이지 않는 고정 '개막작' 라벨 */
+
 .opening_fixed_label {
   position:absolute;
   top:30px;
@@ -696,7 +697,7 @@ header {
   color:var(--black);
 }
 
-/* 호버 시 나타나는 시놉시스 오버레이 (경쟁부문/초청부문/특별상영 공통) */
+/* 호버 시놉시스 오버레이 (경쟁부문/초청부문/특별상영) */
 .film_synopsis {
   position:absolute;
   top:0;
@@ -1241,6 +1242,19 @@ footer {
   line-height:1.5;
 
 }
+
+@media screen and (min-width:1025px) and (max-width:1280px){
+
+  .header_nav ul{
+    gap:32px;
+  }
+
+  .header_nav ul li{
+    font-size:18px;
+  }
+
+}
+
 
 @media screen and (max-width:1024px){
 

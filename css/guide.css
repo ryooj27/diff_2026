@@ -1,8 +1,5 @@
 @charset "utf-8";
 
-/* Pretendard 폰트는 guide.html <head>에서 <link>로 미리 불러옵니다 */
-
-
 /* =====================
    RESET
 ===================== */
@@ -138,6 +135,12 @@ header {
   position:relative;
   display:inline-block;
 
+  transition:color .2s ease;
+
+}
+
+.header_nav a:hover {
+  color:var(--point);
 }
 
 .mega_head {
@@ -1085,6 +1088,19 @@ footer {
 }
 
 
+@media screen and (min-width:1025px) and (max-width:1280px){
+
+  .header_nav ul{
+    gap:32px;
+  }
+
+  .header_nav ul li{
+    font-size:18px;
+  }
+
+}
+
+
 @media screen and (max-width:1024px){
 
 /* 태그 사이 간격 - 태블릿 */
@@ -1614,11 +1630,6 @@ header{
   max-width:calc(100% - 40px);
 }
 
-.logo img{
-  width:auto;
-  height:32px;
-}
-
 .header_nav{
   width:300px;
   padding:100px 24px 48px;
@@ -1665,7 +1676,7 @@ header{
 
 /* 태그 사이 간격을 좀 더 넉넉하게 */
 .tag_group{
-  gap:4px;
+  gap:10px;
 }
 
 /* =====================
