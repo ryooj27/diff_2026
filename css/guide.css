@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+/* Pretendard 폰트는 guide.html <head>에서 <link>로 미리 불러옵니다 */
 
 
 /* =====================
@@ -15,6 +15,9 @@
 
 html {
   scroll-behavior:smooth;
+  overflow-x:hidden;
+  scrollbar-gutter:stable;
+  overflow-y:scroll;
 }
 
 body {
@@ -60,11 +63,12 @@ address {
   --point:#FF6E40;
   --gray:#7A7A7A;
   --white:#EEEEEE;
+  --line:#E5E5E5;
 }
 
 
 /* =====================
-   HEADER
+   HEADER (메인/프로그램 페이지와 동일 - 아코디언 메가메뉴)
 ===================== */
 
 
@@ -129,32 +133,83 @@ header {
 
 }
 
+.header_nav a {
 
-
-.header_nav a::after {
-
-  content:"";
-
-  position:absolute;
-
-  left:50%;
-  bottom:-28px;
-
-  width:0;
-  height:5px;
-
-  background:var(--point);
-
-  transform:translateX(-50%);
-  transition:.3s;
+  position:relative;
+  display:inline-block;
 
 }
 
+.mega_head {
 
+  display:flex;
+  align-items:center;
 
-.header_nav a:hover::after {
+}
 
-  width:120%;
+.mega_toggle {
+
+  display:none;
+
+}
+
+.has_mega {
+  padding:38px 0;
+}
+
+.mega_panel {
+
+  position:absolute;
+  top:90%;
+  left:50%;
+  transform:translateX(-50%) translateY(-6px);
+
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+
+  min-width:200px;
+  padding:20px;
+
+  background:#fff;
+  border-radius:0 0 12px 12px;
+
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+
+  transition:opacity .25s ease, transform .25s ease, visibility .25s;
+
+  z-index:10;
+
+}
+
+.mega_panel a {
+
+  padding:10px 12px;
+  border-radius:8px;
+
+  font-size:15px;
+  font-weight:500;
+  color:var(--black);
+
+  white-space:nowrap;
+
+  transition:.2s;
+
+}
+
+.mega_panel a:hover {
+  color:var(--point);
+}
+
+.has_mega:hover .mega_panel,
+.has_mega:focus-within .mega_panel {
+
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translateX(-50%) translateY(0);
 
 }
 
@@ -188,6 +243,30 @@ header {
 }
 
 
+/* mobile nav overlay (dim background) */
+
+.nav_overlay {
+
+  display:none;
+
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+
+  background:rgba(0,0,0,.45);
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:opacity .35s ease, visibility .35s ease;
+
+  z-index:999;
+
+}
+
+
 
 .guide{
   width:100%;
@@ -206,6 +285,8 @@ header {
   width:360px;
   height:calc(100vh - 100px);
   padding-top:100px;
+
+  overflow-y:auto;
 
   background:#F8F8F8;
 
@@ -450,9 +531,29 @@ header {
   font-size:62px;
 }
 
-.step_icon:first-child{
-  color: var(--point);
+/* 화면에 들어오면 하나씩만 순서대로 켜지면서 무한 반복되는 체이싱 애니메이션
+   (1-0-0-0-0 -> 0-1-0-0-0 -> 0-0-1-0-0 -> 0-0-0-1-0 -> 0-0-0-0-1 -> 반복) */
+@keyframes stepChase {
+  0%,
+  20%,
+  100% {
+    color:#939393;
+  }
+  4%,
+  16% {
+    color:var(--point);
+  }
 }
+
+.step_list.in_view .step_icon {
+  animation:stepChase 5s linear infinite;
+}
+
+.step_list.in_view li:nth-child(1) .step_icon{ animation-delay:0s; }
+.step_list.in_view li:nth-child(2) .step_icon{ animation-delay:1s; }
+.step_list.in_view li:nth-child(3) .step_icon{ animation-delay:2s; }
+.step_list.in_view li:nth-child(4) .step_icon{ animation-delay:3s; }
+.step_list.in_view li:nth-child(5) .step_icon{ animation-delay:4s; }
 
 .step_list li > span {
   color:var(--point);
@@ -563,6 +664,7 @@ header {
   display:inline-flex;
   justify-content:center;
   align-items:center;
+  flex-shrink:0;
 
   color:#fff;
   font-size:16px;
@@ -586,15 +688,22 @@ header {
 }
 
 .age{
-  width:25px;
-  height:25px;
+  width:34px;
+  height:34px;
+  aspect-ratio:1;
 
   border-radius:50%;
 }
 
 .age.all{
   background:#34C759;
-  font-size:11px;
+  font-size:13px;
+}
+
+.age.age12,
+.age.age15,
+.age.age19{
+  font-size:14px;
 }
 
 .age.age12{
@@ -726,8 +835,11 @@ header {
   width:123px;
 }
 
-.tag + .tag{
-  margin-left:8px;
+.tag_group{
+  display:inline-flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px;
 }
 
 
@@ -932,17 +1044,18 @@ header {
 
 
 /* =========
-   푸터
+   푸터 (다른 페이지와 동일)
 ============ */
 footer {
   padding:70px 0;
   border-top:1px solid #EEEEEE;
-
-  margin-left: 260px;
-
 }
 
 .footer_i {
+  width:1400px;
+  max-width:calc(100% - 80px);
+  margin:0 auto;
+
   display:flex;
   align-items:center;
   gap:80px;
@@ -953,7 +1066,7 @@ footer {
 }
 
 .footer_info {
-  font-size:15px;
+  font-size:12px;
   line-height:1.8;
   color:var(--black);
 }
@@ -963,6 +1076,7 @@ footer {
 }
 
 
+#first,
 #schedule,
 #ticket,
 #notice,
@@ -972,6 +1086,11 @@ footer {
 
 
 @media screen and (max-width:1024px){
+
+/* 태그 사이 간격 - 태블릿 */
+.tag_group{
+  gap:6px;
+}
 
 /* =====================
    HEADER
@@ -985,8 +1104,143 @@ footer {
   width:108px;
 }
 
+.nav_overlay{
+  display:block;
+}
+
+.nav_overlay.active{
+  opacity:1;
+  visibility:visible;
+}
+
 .header_nav{
-  display:none;
+  position:fixed;
+  top:0;
+  right:-100%;
+
+  width:340px;
+  max-width:80%;
+  height:100%;
+  height:100dvh;
+
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+
+  padding:120px 32px 60px;
+
+  background:#fff;
+  box-shadow:-8px 0 24px rgba(0,0,0,.12);
+
+  transition:right .35s ease;
+
+  z-index:1001;
+}
+
+.header_nav.active{
+  right:0;
+}
+
+.header_nav ul{
+  flex-direction:column;
+  align-items:flex-start;
+  gap:0;
+}
+
+.header_nav ul li{
+  width:100%;
+}
+
+.has_mega{
+  width:100%;
+  padding:20px 0;
+  border-bottom:1px solid #eee;
+}
+
+.header_nav a.nav_link{
+  font-size:20px;
+}
+
+.mega_head{
+  width:100%;
+  justify-content:space-between;
+}
+
+.mega_toggle{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width:32px;
+  height:32px;
+  flex-shrink:0;
+
+  color:var(--black);
+
+  transition:color .3s ease;
+}
+
+.mega_toggle i,
+.mega_toggle svg{
+  font-size:15px;
+  width:15px;
+  height:15px;
+  transition:transform .3s ease;
+}
+
+.has_mega.open .mega_toggle{
+  color:var(--point);
+}
+
+.mega_toggle[aria-expanded="true"] i,
+.mega_toggle[aria-expanded="true"] svg{
+  transform:rotate(180deg);
+}
+
+.has_mega.open .nav_link{
+  color:var(--point) !important;
+}
+
+.mega_panel{
+  position:static !important;
+
+  transform:none !important;
+
+  display:flex !important;
+  flex-direction:column;
+
+  opacity:1 !important;
+  visibility:visible !important;
+  pointer-events:auto !important;
+
+  min-width:0;
+  max-height:0;
+  margin-top:0;
+  padding:0 0 0 12px;
+
+  overflow:hidden;
+
+  border-radius:0;
+  background:transparent;
+
+  transition:max-height .35s ease, margin-top .35s ease;
+}
+
+.has_mega.open .mega_panel{
+  max-height:600px !important;
+  margin-top:12px;
+}
+
+.mega_panel a{
+  display:block !important;
+  padding:8px 0;
+  font-size:15px;
+  color:#181818 !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+body.nav_open{
+  overflow:hidden;
 }
 
 .icon{
@@ -1209,6 +1463,37 @@ footer {
   width:100%;
 }
 
+/* 상영일정표용 고정폭(200/182/129/123px)을 그대로 물려받아서
+   구분/장소/금액/비고 칸이 너무 좁게 눌리던 문제 수정 */
+.ticket_content .table_wrap table{
+  table-layout:fixed;
+}
+
+.ticket_content .table_wrap th,
+.ticket_content .table_wrap td{
+  width:auto;
+}
+
+.ticket_content .table_wrap th:first-child,
+.ticket_content .table_wrap td:first-child{
+  width:26%;
+}
+
+.ticket_content .table_wrap th:nth-child(2),
+.ticket_content .table_wrap td:nth-child(2){
+  width:26%;
+}
+
+.ticket_content .table_wrap th:nth-child(3),
+.ticket_content .table_wrap td:nth-child(3){
+  width:22%;
+}
+
+.ticket_content .table_wrap th:nth-child(4),
+.ticket_content .table_wrap td:nth-child(4){
+  width:26%;
+}
+
 .ticket_left .more{
   grid-row:5;
 
@@ -1304,10 +1589,6 @@ footer {
    FOOTER
 ===================== */
 
-footer{
-  margin-left:0;
-}
-
 .footer_i{
   width:100%;
   max-width:calc(100% - 64px);
@@ -1319,22 +1600,28 @@ footer{
 
 
 
-@media screen and (max-width:600px){
+@media screen and (max-width:767px){
 
 /* =====================
-   HEADER
+   HEADER (다른 페이지와 동일한 모바일 헤더 크기)
 ===================== */
 
 header{
-  height:70px;
+  height:80px;
 }
 
 .header_i{
-  max-width:calc(100% - 32px);
+  max-width:calc(100% - 40px);
 }
 
 .logo img{
-  width:76px;
+  width:auto;
+  height:32px;
+}
+
+.header_nav{
+  width:300px;
+  padding:100px 24px 48px;
 }
 
 .icon{
@@ -1343,19 +1630,47 @@ header{
 
 .icon i,
 .icon svg{
-  width:22px;
-  height:22px;
-  font-size:22px;
+  width:28px;
+  height:28px;
+  font-size:28px;
 }
 
+.guide{
+  padding-top:80px;
+}
+
+/* =====================
+   FOOTER (다른 페이지와 동일)
+===================== */
+
+.footer_i{
+  flex-direction:column;
+  align-items:flex-start;
+  gap:24px;
+}
+
+.footer_logo img{
+  width:110px;
+}
+
+.footer_info{
+  font-size:9px;
+}
+
+}
+
+
+
+@media screen and (max-width:600px){
+
+/* 태그 사이 간격을 좀 더 넉넉하게 */
+.tag_group{
+  gap:4px;
+}
 
 /* =====================
    GUIDE / LAYOUT
 ===================== */
-
-.guide{
-  padding-top:70px;
-}
 
 .guide_i{
   width:100%;
@@ -1374,11 +1689,6 @@ header{
 .date_tab,
 .legend{
   min-width:0;
-}
-
-html,
-body{
-  overflow-x:hidden;
 }
 
 
@@ -1544,8 +1854,9 @@ body{
   justify-content:center;
   flex-shrink:0;
 
-  width:24px;
-  height:24px;
+  width:30px;
+  height:30px;
+  aspect-ratio:1;
   border-radius:50%;
 
   font-size:12px;
@@ -1585,7 +1896,7 @@ body{
 
 .tag,
 .age{
-  font-size:12px;
+  font-size:10px;
 }
 
 .tag{
@@ -1594,8 +1905,10 @@ body{
 }
 
 .age{
-  width:20px;
-  height:20px;
+  width:26px;
+  height:26px;
+  aspect-ratio:1;
+  flex-shrink:0;
 }
 
 
@@ -1692,21 +2005,6 @@ body{
 
 footer{
   padding:40px 0;
-}
-
-.footer_i{
-  flex-direction:column;
-  align-items:flex-start;
-  gap:24px;
-}
-
-.footer_logo img{
-  width:110px;
-}
-
-.footer_info{
-  font-size:12px;
-  line-height:1.7;
 }
 
 }
