@@ -122,27 +122,45 @@
 /* ============================
    상영 일정표 날짜 탭 / 예매 안내 탭
    - 클릭한 것만 활성화 (밑줄 애니메이션은 CSS transition으로 처리)
+   - 날짜 탭은 클릭된 버튼의 data-date 와 같은 data-date 를 가진
+     .schedule_content 만 보여주고 나머지는 숨긴다.
+     (표 내용 자체는 guide.html 에서 직접 수정)
+============================ */
+
+/* ============================
+   상영 일정표 날짜 탭 / 예매 안내 탭
+   - 클릭한 것만 활성화 (밑줄 애니메이션은 CSS transition으로 처리)
+   - 두 탭 모두 클릭된 버튼의 data-date / data-tab 값과
+     같은 값을 가진 콘텐츠만 보여주고 나머지는 숨긴다.
+     (표 내용 자체는 guide.html 에서 직접 수정)
 ============================ */
 
 (function () {
 
-  function setupTabGroup(selector) {
-    const buttons = document.querySelectorAll(selector);
+  function setupToggleTabs(tabSelector, contentSelectors, dataKey) {
+    const buttons = document.querySelectorAll(tabSelector);
+    const contents = document.querySelectorAll(contentSelectors);
 
-    if (!buttons.length) return;
+    if (!buttons.length || !contents.length) return;
 
     buttons.forEach(function (btn) {
       btn.addEventListener("click", function () {
+        const target = btn.dataset[dataKey];
+
         buttons.forEach(function (b) {
           b.classList.remove("active");
         });
         btn.classList.add("active");
+
+        contents.forEach(function (content) {
+          content.classList.toggle("active", content.dataset[dataKey] === target);
+        });
       });
     });
   }
 
-  setupTabGroup(".date_tab button");
-  setupTabGroup(".ticket_tab button");
+  setupToggleTabs(".date_tab button", ".schedule_content", "date");
+  setupToggleTabs(".ticket_tab button", ".ticket_content, .ticket_note", "tab");
 
 })();
 

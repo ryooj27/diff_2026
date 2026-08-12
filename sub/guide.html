@@ -365,15 +365,15 @@
             <!-- //legend -->
 
           <div class="date_tab">
-            <button type="button">08.20(목)</button>
-            <button type="button" class="active">08.21(금)</button>
-            <button type="button">08.22(토)</button>
-            <button type="button">08.23(일)</button>
-            <button type="button">08.24(월)</button>
+            <button type="button" class="active" data-date="0820">08.20(목)</button>
+            <button type="button" data-date="0821">08.21(금)</button>
+            <button type="button" data-date="0822">08.22(토)</button>
+            <button type="button" data-date="0823">08.23(일)</button>
+            <button type="button" data-date="0824">08.24(월)</button>
           </div>
 
             <!-- schedule table -->
-            <div class="schedule_content">
+            <div class="schedule_content active" data-date="0820">
 
               <div class="theater">
                 <h3>오오극장</h3>
@@ -392,41 +392,406 @@
                     <tbody>
                       <tr>
                         <td>1회<br>10:30-12:40</td>
-                        <td>배리어프리 강원</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+
+                      <tr>
+                        <td>2회<br>13:10-15:20</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+
+                      <tr>
+                        <td>3회<br>15:50-18:00</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+
+                      <tr>
+                        <td>4회<br>18:30-20:40</td>
+                        <td>개막식</td>
                         <td>
-                          <span class="tag_group">
-                            <span class="tag gv">GV</span>
-                            <span class="tag book">사전신청</span>
-                          </span>
+                          <span class="tag gv">GV</span>
+                          <span class="tag book">사전신청</span>
+                        </td>
+                        <td>-</td>
+                      </tr>
+
+                      <tr>
+                        <td>5회<br>21:20-22:35</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+               <div class="theater">
+                <h3>CGV 대구한일</h3>
+
+                <div class="table_wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>상영시간</th>
+                        <th>제목</th>
+                        <th>상영정보</th>
+                        <th>등급</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>1회<br>10:30-12:40</td>
+                        <td>-</td>
+                        <td>- </td>
+                        <td>-</td>
+                      </tr>
+
+                      <tr>
+                        <td>2회<br>13:10-15:20</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+
+                      <tr>
+                        <td>3회<br>15:50-18:00</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+
+                      <tr>
+                        <td>4회<br>18:30-20:40</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="schedule_content" data-date="0821">
+
+              <div class="theater">
+                <h3>오오극장</h3>
+
+                <div class="table_wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>상영시간</th>
+                        <th>제목</th>
+                        <th>상영정보</th>
+                        <th>등급</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>1회<br>10:30-12:40</td>
+                        <td>배리어프리 1</td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                          <span class="tag book">사전신청</span>
+                        </td>
+                        <td><span class="age age12">12</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>2회<br>13:10-15:20</td>
+                        <td>경쟁 1</td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                        </td>
+                        <td><span class="age age15">15</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>3회<br>15:50-18:00</td>
+                        <td>경쟁 2</td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                        </td>
+                        <td><span class="age age12">12</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>4회<br>18:30-20:40</td>
+                        <td>배리어프리 2</td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                          <span class="tag book">사전신청</span>
+                        </td>
+                        <td><span class="age age15">15</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>5회<br>21:20-22:35</td>
+                        <td>미드나잇시네마 1</td>
+                        <td>-</td>
+                        <td><span class="age age15">15</span></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+               <div class="theater">
+                <h3>CGV 대구한일</h3>
+
+                <div class="table_wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>상영시간</th>
+                        <th>제목</th>
+                        <th>상영정보</th>
+                        <th>등급</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>1회<br>10:30-12:40</td>
+                        <td>로컬존</td>
+                        <td>
+                          <span class="tag gv">GV</span>
                         </td>
                         <td><span class="age age15">15</span></td>
                       </tr>
 
                       <tr>
                         <td>2회<br>13:10-15:20</td>
-                        <td>경쟁 1</td>
-                        <td><span class="tag gv">GV</span></td>
+                        <td>경쟁 9</td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                        </td>
                         <td><span class="age age15">15</span></td>
                       </tr>
 
                       <tr>
                         <td>3회<br>15:50-18:00</td>
+                        <td>경쟁 3</td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                        </td>
+                        <td><span class="age age15">15</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>4회<br>18:30-20:40</td>
                         <td>경쟁 4</td>
-                        <td><span class="tag gv">GV</span></td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                        </td>
+                        <td><span class="age age15">15</span></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="schedule_content" data-date="0822">
+
+              <div class="theater">
+                <h3>오오극장</h3>
+
+                <div class="table_wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>상영시간</th>
+                        <th>제목</th>
+                        <th>상영정보</th>
+                        <th>등급</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <td>1회<br>10:30-12:40</td>
+                        <td>경쟁 5</td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                        </td>
+                        <td><span class="age age15">15</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>2회<br>13:10-15:20</td>
+                        <td>경쟁 6</td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                        </td>
+                        <td><span class="age age15">15</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>3회<br>15:50-18:00</td>
+                        <td>경쟁 7</td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                        </td>
+                        <td><span class="age age15">15</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>4회<br>18:30-20:40</td>
+                        <td>경쟁 8</td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                        </td>
+                        <td><span class="age age12">12</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>5회<br>21:20-22:35</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+               <div class="theater">
+                <h3>CGV 대구한일</h3>
+
+                <div class="table_wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>상영시간</th>
+                        <th>제목</th>
+                        <th>상영정보</th>
+                        <th>등급</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>1회<br>10:30-12:40</td>
+                        <td>이어지는</td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                        </td>
+                        <td><span class="age age all">G</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>2회<br>13:10-15:20</td>
+                        <td>로컬포럼</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+
+                      <tr>
+                        <td>3회<br>15:50-18:00</td>
+                        <td>경쟁 11</td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                        </td>
+                        <td><span class="age age15">15</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>4회<br>18:30-20:40</td>
+                        <td>경쟁 12</td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                        </td>
+                        <td><span class="age age15">15</span></td>
+                      </tr>
+                      <tr>
+                        <td>5회<br>21:10-22:35</td>
+                        <td>미드나잇시네마 2</td>
+                        <td>-</td>
+                        <td><span class="age age19">19</span></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="schedule_content" data-date="0823">
+
+              <div class="theater">
+                <h3>오오극장</h3>
+
+                <div class="table_wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>상영시간</th>
+                        <th>제목</th>
+                        <th>상영정보</th>
+                        <th>등급</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>1회<br>10:30-12:40</td>
+                        <td>디프초이스 1</td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                          <span class="tag book">사전신청</span>
+                        </td>
+                        <td><span class="age age15">15</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>2회<br>13:10-15:20</td>
+                        <td>디프초이스 2</td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                          <span class="tag book">사전신청</span>
+                        </td>
+                        <td><span class="age age15">15</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>3회<br>15:50-18:00</td>
+                        <td>경쟁 12</td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                        </td>
                         <td><span class="age age12">12</span></td>
                       </tr>
 
                       <tr>
                         <td>4회<br>18:30-20:40</td>
-                        <td>배리어프리 대구</td>
-                        <td><span class="tag gv">GV</span></td>
+                        <td>경쟁 10</td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                        </td>
                         <td><span class="age age12">12</span></td>
                       </tr>
 
                       <tr>
                         <td>5회<br>21:20-22:35</td>
                         <td>미드나잇시네마 1</td>
-                        <td><span class="tag gv">GV</span></td>
+                        <td>-</td>
                         <td><span class="age age19">19</span></td>
                       </tr>
                     </tbody>
@@ -434,7 +799,7 @@
                 </div>
               </div>
 
-              <div class="theater">
+               <div class="theater">
                 <h3>CGV 대구한일</h3>
 
                 <div class="table_wrap">
@@ -452,30 +817,149 @@
                       <tr>
                         <td>1회<br>10:30-12:40</td>
                         <td>배리어프리 강원</td>
-                        <td><span class="tag gv">GV</span></td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                        </td>
                         <td><span class="age age15">15</span></td>
                       </tr>
 
                       <tr>
                         <td>2회<br>13:10-15:20</td>
                         <td>경쟁 1</td>
-                        <td><span class="tag gv">GV</span></td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                        </td>
                         <td><span class="age age15">15</span></td>
                       </tr>
 
                       <tr>
                         <td>3회<br>15:50-18:00</td>
                         <td>경쟁 4</td>
-                        <td><span class="tag gv">GV</span></td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                        </td>
                         <td><span class="age age12">12</span></td>
                       </tr>
 
                       <tr>
                         <td>4회<br>18:30-20:40</td>
                         <td>배리어프리 대구</td>
-                        <td><span class="tag gv">GV</span></td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                        </td>
                         <td><span class="age age12">12</span></td>
                       </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="schedule_content" data-date="0824">
+
+              <div class="theater">
+                <h3>오오극장</h3>
+
+                <div class="table_wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>상영시간</th>
+                        <th>제목</th>
+                        <th>상영정보</th>
+                        <th>등급</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>1회<br>10:30-12:40</td>
+                        <td>-</td>
+                        <td>- </td>
+                        <td>-</td>
+                      </tr>
+
+                      <tr>
+                        <td>2회<br>13:10-15:20</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+
+                      <tr>
+                        <td>3회<br>15:50-18:00</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+
+                      <tr>
+                        <td>4회<br>18:30-20:40</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+
+                      <tr>
+                        <td>5회<br>21:20-22:35</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+                <div class="theater">
+                <h3>CGV 대구한일</h3>
+
+                <div class="table_wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>상영시간</th>
+                        <th>제목</th>
+                        <th>상영정보</th>
+                        <th>등급</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>1회<br>10:30-12:40</td>
+                        <td>-</td>
+                        <td>- </td>
+                        <td>-</td>
+                      </tr>
+
+                      <tr>
+                        <td>2회<br>13:10-15:20</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+
+                      <tr>
+                        <td>3회<br>15:50-18:00</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+
+                      <tr>
+                        <td>4회<br>18:30-20:40</td>
+                        <td>폐막식</td>
+                        <td>
+                          <span class="tag gv">GV</span>
+                          <span class="tag book">사전신청</span>
+                        </td>
+                        <td>-</td>
+                      </tr>
+
                     </tbody>
                   </table>
                 </div>
@@ -507,10 +991,10 @@
       </div>
 
       <div class="ticket_tab">
-        <button type="button" class="active">예매안내</button>
-        <button type="button">온라인예매</button>
-        <button type="button">현장발권</button>
-        <button type="button">취소&amp;환불</button>
+        <button type="button" class="active" data-tab="info">예매안내</button>
+        <button type="button" data-tab="online">온라인예매</button>
+        <button type="button" data-tab="offline">현장발권</button>
+        <button type="button" data-tab="refund">취소&amp;환불</button>
       </div>
 
     </div>
@@ -528,9 +1012,26 @@
           <i class="fa-solid fa-arrow-right"></i>
         </a>
 
-        <p class="ticket_note">
+        <!-- 안내 문구  -->
+        <p class="ticket_note active" data-tab="info">
           * 예매 전 반드시 상영시간표를 확인하여 주시기 바랍니다.<br>
           * 본 상품은 문화비 소득공제 제외상품입니다.
+        </p>
+
+        <p class="ticket_note" data-tab="online">
+          * 온라인 예매 가능 시간은 상영 시작 1시간 전까지입니다.<br>
+          * 당일 예매 취소 시 취소수수료 3,000원이 부과됩니다.<br>
+          * 문의 053-629-4424
+        </p>
+
+        <p class="ticket_note" data-tab="offline">
+          * 현장발권은 상영 시작 1시간 전부터, 각 상영관별 현장발권처에서 진행됩니다.<br>
+          * 상영 1시간 전, 온라인 예매 종료 후 남은 좌석들이 현장 판매분으로 전환됩니다.
+        </p>
+
+        <p class="ticket_note" data-tab="refund">
+          * 각 예매처마다 취소·환불 규정이 다르니 규정을 확인해 주시기 바랍니다.<br>
+          * 온라인 예매 취소는 해당 예매처의 홈페이지 및 모바일 앱을 이용해주시기 바랍니다.
         </p>
 
       </div>
@@ -538,7 +1039,7 @@
 
 
       <!-- right -->
-      <div class="ticket_content">
+      <div class="ticket_content active" data-tab="info">
 
         <div class="table_wrap">
           <table>
@@ -597,6 +1098,113 @@
                 <td>무영당</td>
                 <td>무료</td>
                 <td>선착순 입장</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- 온라인예매 -->
+      <div class="ticket_content" data-tab="online">
+
+        <div class="table_wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>상영관</th>
+                <th>온라인 예매처</th>
+                <th>예매 오픈</th>
+                <th>비고</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  CGV 대구한일 3관 <br>
+                  오오극장
+                </td>
+                <td>TINY TICKET</td>
+                <td>
+                  일반상영 : 8월 3일 오후 2시
+                  <br><br>
+                  특별상영 : 8월 10일 오후 2시
+                </td>
+                <td>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- 현장발권 -->
+      <div class="ticket_content" data-tab="offline">
+
+        <div class="table_wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>상영관</th>
+                <th>현장발권처</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>오오극장</td>
+                <td>오오극장 내 영화제 부스</td>
+              </tr>
+
+              <tr>
+                <td>CGV 대구한일 3관</td>
+                <td>
+                  CGV 대구한일 3관 앞
+                  영화제 부스(11층)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- 취소&환불 -->
+      <div class="ticket_content" data-tab="refund">
+
+        <div class="table_wrap">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>오오극장</th>
+                <th>CGV 대구한일 3관</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>상영 20분 전까지</td>
+                <td>취소수수료 3,000원</td>
+                <td>취소수수료 3,000원</td>
+              </tr>
+              <tr>
+                <td>상영까지  20분 미만</td>
+                <td>
+                  50% 환불가능 <br>
+                  (온라인 환불 불가)
+                </td>
+                <td>
+                  취소수수료 3,000원 <br>
+                  (온라인 환불 불가)
+                </td>
+              </tr>
+              <tr>
+                <td>상영 시작 후</td>
+                <td>환불 불가</td>
+                <td>환불 불가</td>
               </tr>
             </tbody>
           </table>

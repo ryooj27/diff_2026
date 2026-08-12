@@ -626,9 +626,13 @@ header {
 
   width:818px;
 
-  display:flex;
+  display:none;
   flex-direction:column;
   gap:80px;
+}
+
+.schedule_content.active{
+  display:flex;
 }
 
 /* =====================
@@ -895,7 +899,7 @@ header {
   grid-template-columns:360px 817px;
   column-gap:112px;
 
-  align-items:flex-end;
+  align-items:flex-start;
 }
 
 /* 왼쪽 */
@@ -919,12 +923,24 @@ header {
 
   font-size:16px;
   line-height:1.6;
+
+  display:none;
+}
+
+.ticket_note.active{
+  display:block;
 }
 
 /* 오른쪽 */
 
 .ticket_content{
   width:817px;
+
+  display:none;
+}
+
+.ticket_content.active{
+  display:block;
 }
 
 .ticket_content .table_wrap{
