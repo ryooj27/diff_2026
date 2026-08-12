@@ -257,7 +257,7 @@ header {
   max-width:calc(100% - 80px);
   height:100%;
   margin:0 auto;
-  padding-top:80px;
+  padding-top:100px;
 
   display:flex;
   justify-content:space-between;
@@ -644,7 +644,7 @@ header {
 
   display:-webkit-box;
   -webkit-box-orient:vertical;
-  -webkit-line-clamp:2;
+  /* -webkit-line-clamp:2; */
 
   overflow:hidden;
   text-overflow:ellipsis;
@@ -732,7 +732,7 @@ header {
 
   display:-webkit-box;
   -webkit-box-orient:vertical;
-  -webkit-line-clamp:7;
+  /* -webkit-line-clamp:7; */
 
   overflow:hidden;
   text-overflow:ellipsis;
