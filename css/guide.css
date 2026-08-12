@@ -947,13 +947,42 @@ header {
   width:100%;
 }
 
+/* 표마다(예매안내/온라인예매/현장발권/취소&환불) 열 구성과 텍스트 길이가
+   달라서, 상영일정표에서 쓰던 고정폭을 그대로 물려받으면 칸이 눌리고
+   여백이 어색해짐. table-layout:fixed + 비율 폭으로 통일하고
+   상하좌우 padding을 넉넉하게 줘서 줄바꿈이 생겨도 여유 있게 보이도록 함. */
+.ticket_content .table_wrap table{
+  table-layout:fixed;
+}
+
+.ticket_content .table_wrap th,
 .ticket_content .table_wrap td{
-  height:96px;
+  width:auto;
+  height:auto;
+
+  padding:24px 24px 24px 20px;
+
+  line-height:1.6;
 }
 
 .ticket_content .table_wrap th:first-child,
 .ticket_content .table_wrap td:first-child{
-  width:38%;
+  width:26%;
+}
+
+.ticket_content .table_wrap th:nth-child(2),
+.ticket_content .table_wrap td:nth-child(2){
+  width:26%;
+}
+
+.ticket_content .table_wrap th:nth-child(3),
+.ticket_content .table_wrap td:nth-child(3){
+  width:22%;
+}
+
+.ticket_content .table_wrap th:nth-child(4),
+.ticket_content .table_wrap td:nth-child(4){
+  width:26%;
 }
 
 
@@ -1495,37 +1524,6 @@ body.nav_open{
   width:100%;
 }
 
-/* 상영일정표용 고정폭(200/182/129/123px)을 그대로 물려받아서
-   구분/장소/금액/비고 칸이 너무 좁게 눌리던 문제 수정 */
-.ticket_content .table_wrap table{
-  table-layout:fixed;
-}
-
-.ticket_content .table_wrap th,
-.ticket_content .table_wrap td{
-  width:auto;
-}
-
-.ticket_content .table_wrap th:first-child,
-.ticket_content .table_wrap td:first-child{
-  width:26%;
-}
-
-.ticket_content .table_wrap th:nth-child(2),
-.ticket_content .table_wrap td:nth-child(2){
-  width:26%;
-}
-
-.ticket_content .table_wrap th:nth-child(3),
-.ticket_content .table_wrap td:nth-child(3){
-  width:22%;
-}
-
-.ticket_content .table_wrap th:nth-child(4),
-.ticket_content .table_wrap td:nth-child(4){
-  width:26%;
-}
-
 .ticket_left .more{
   grid-row:5;
 
@@ -1972,7 +1970,7 @@ header{
 }
 
 .ticket_content .table_wrap td{
-  height:64px;
+  min-height:64px;
 }
 
 
