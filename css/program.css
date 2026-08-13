@@ -649,6 +649,7 @@ header {
   display:-webkit-box;
   -webkit-box-orient:vertical;
   -webkit-line-clamp:3;
+  line-clamp:3;
 
   overflow:hidden;
   text-overflow:ellipsis;
@@ -738,6 +739,7 @@ header {
   display:-webkit-box;
   -webkit-box-orient:vertical;
   -webkit-line-clamp:5;
+  line-clamp:5;
 
   overflow:hidden;
   text-overflow:ellipsis;
@@ -755,6 +757,7 @@ header {
   font-size:13px;
   line-height:1.5;
   -webkit-line-clamp:3;
+  line-clamp:3;
 }
 
 /* 마우스 호버가 실제로 가능한 기기(PC)에서만 :hover로 시놉시스 노출.
@@ -1782,6 +1785,7 @@ footer {
 
   .opening_text .desc{
       -webkit-line-clamp:2;
+      line-clamp:2;
   }
 
   .competition .section_head{
@@ -1822,6 +1826,7 @@ footer {
       font-size:13px;
       line-height:1.5;
       -webkit-line-clamp:3;
+      line-clamp:3;
   }
 
   .competition .film_img{
@@ -1973,6 +1978,7 @@ footer {
       font-size:11px;
       line-height:1.45;
       -webkit-line-clamp:2;
+      line-clamp:2;
   }
 
   .invitation .film_img,
