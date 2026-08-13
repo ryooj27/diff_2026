@@ -4,8 +4,6 @@
   font-family: '어그로';
   src: url(../font/SB\ 어그로\ L.ttf);
 }
-/* Pretendard 폰트는 index.html <head>에서 <link>로 미리 불러옵니다
-   (@import는 발견이 늦어 폰트가 늦게 적용되며 레이아웃이 흔들리는 원인이 됨) */
 
 * {
   margin:0;
@@ -1601,10 +1599,7 @@ footer {
 
 @media screen and (max-width:1024px){
 
-  /* 태블릿 구간(768~1024px) 폰트 크기 보정
-     - 기존에는 이 구간에서 레이아웃만 좁아지고 글자 크기는
-       PC 크기 그대로 유지되어 텍스트가 넘치거나 줄바꿈이 어색했음
-     - .hero_title / .hero_date 는 아래쪽에 이미 있는 규칙을 직접 수정함 */
+
   .poster_title h2,
   .about_title h2,
   .program_title h2,
@@ -1750,9 +1745,7 @@ footer {
     color:var(--point);
   }
 
-  /* Font Awesome 스크립트가 <i>를 런타임에 <svg>로 자동 치환하기 때문에
-     ".mega_toggle i" 만으로는 회전이 안 걸릴 수 있어, 태그와 상관없이
-     항상 정확한 aria-expanded 속성 기준으로 회전을 건다 */
+
   .mega_toggle[aria-expanded="true"] i,
   .mega_toggle[aria-expanded="true"] svg{
     transform:rotate(180deg);
@@ -1787,9 +1780,7 @@ footer {
     transition:max-height .35s ease, margin-top .35s ease;
   }
 
-  /* 서브메뉴 개수가 늘어나도 안전하게 펼쳐지도록 넉넉한 고정값 사용
-     (JS의 scrollHeight 계산에 의존하면 타이밍에 따라 0으로 측정되어
-     펼쳐지지 않는 것처럼 보이는 문제가 있었음) */
+
   .has_mega.open .mega_panel{
     max-height:600px !important;
     margin-top:12px;
