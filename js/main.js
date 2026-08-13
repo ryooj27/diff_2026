@@ -1,9 +1,3 @@
-/* ============================
-   Mobile Navigation (hamburger)
-   ※ 다른 기능(Swiper 등)에서 에러가 나도
-     메뉴는 항상 동작하도록 파일 맨 위에 둠
-============================ */
-
 (function () {
 
   const menuBtn = document.querySelector(".menu_btn");
@@ -31,7 +25,6 @@
     const toggleBtn = li.querySelector(".mega_toggle");
     const isOpen = li.classList.contains("open");
 
-    // 다른 항목은 닫고 하나만 펼쳐지게
     headerNav.querySelectorAll(".has_mega.open").forEach(function (openLi) {
       if (openLi !== li) closeAccordion(openLi);
     });
@@ -53,7 +46,6 @@
     });
   });
 
-  // 태블릿/모바일에서는 상단 메뉴 텍스트를 눌러도 펼침/접힘 동작
   navLinks.forEach(function (link) {
     link.addEventListener("click", function (event) {
       if (window.innerWidth <= 1024) {

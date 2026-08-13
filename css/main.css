@@ -22,6 +22,7 @@ html {
 
 body {
   width:100%;
+  overflow-x:hidden;
   font-family:'Pretendard', sans-serif;
   color:#181818;
 }
@@ -47,6 +48,7 @@ button {
   border:0;
   background:none;
   cursor:pointer;
+  color:inherit;
 }
 
 
@@ -458,6 +460,7 @@ header {
 
 .poster_section {
   margin-top: 160px;
+  overflow-x:hidden;
 }
 
 
@@ -1597,7 +1600,22 @@ footer {
 
 
 @media screen and (max-width:1024px){
-  
+
+  /* 태블릿 구간(768~1024px) 폰트 크기 보정
+     - 기존에는 이 구간에서 레이아웃만 좁아지고 글자 크기는
+       PC 크기 그대로 유지되어 텍스트가 넘치거나 줄바꿈이 어색했음
+     - .hero_title / .hero_date 는 아래쪽에 이미 있는 규칙을 직접 수정함 */
+  .poster_title h2,
+  .about_title h2,
+  .program_title h2,
+  .board_title h2{
+    font-size:32px;
+  }
+
+  .program_text h3{
+    font-size:24px;
+  }
+
   .side_btn{
     display:none;
   }
@@ -1656,7 +1674,8 @@ footer {
   .header_nav{
     position:fixed;
     top:0;
-    right:-100%;
+    right:0;
+    transform:translateX(100%);
 
     width:340px;
     max-width:80%;
@@ -1671,13 +1690,13 @@ footer {
     background:#fff;
     box-shadow:-8px 0 24px rgba(0,0,0,.12);
 
-    transition:right .35s ease;
+    transition:transform .35s ease;
 
     z-index:1001;
   }
 
   .header_nav.active{
-    right:0;
+    transform:translateX(0);
   }
 
   .header_nav ul{
@@ -1826,15 +1845,17 @@ footer {
   }
 
   .hero_content{
-    width:471px;
+    width:auto;
+    max-width:471px;
   }
 
   .hero_text{
-    width:457px;
+    width:auto;
+    max-width:457px;
   }
 
   .hero_title{
-    font-size:56px;
+    font-size:44px;
     font-weight:700;
     line-height:1.2;
   }
@@ -1842,7 +1863,7 @@ footer {
   .hero_date{
     margin-top:10px;
 
-    font-size:56px;
+    font-size:44px;
     font-weight:700;
     line-height:1.2;
 

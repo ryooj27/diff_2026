@@ -19,6 +19,7 @@ html {
 
 body {
   width:100%;
+  overflow-x:hidden;
   font-family:'Pretendard', sans-serif;
   color:#181818;
 }
@@ -847,6 +848,7 @@ header {
   flex-wrap:wrap;
   align-items:center;
   gap:8px;
+  padding:8px 0;
 }
 
 
@@ -1151,6 +1153,7 @@ footer {
 /* 태그 사이 간격 - 태블릿 */
 .tag_group{
   gap:6px;
+  padding:6px 0;
 }
 
 /* =====================
@@ -1177,7 +1180,8 @@ footer {
 .header_nav{
   position:fixed;
   top:0;
-  right:-100%;
+  right:0;
+  transform:translateX(100%);
 
   width:340px;
   max-width:80%;
@@ -1192,13 +1196,13 @@ footer {
   background:#fff;
   box-shadow:-8px 0 24px rgba(0,0,0,.12);
 
-  transition:right .35s ease;
+  transition:transform .35s ease;
 
   z-index:1001;
 }
 
 .header_nav.active{
-  right:0;
+  transform:translateX(0);
 }
 
 .header_nav ul{
@@ -1691,6 +1695,7 @@ header{
 /* 태그 사이 간격을 좀 더 넉넉하게 */
 .tag_group{
   gap:10px;
+  padding:8px 0;
 }
 
 /* =====================

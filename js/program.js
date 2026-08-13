@@ -1,8 +1,3 @@
-/* ============================
-   Mobile Navigation (hamburger)
-   ※ 다른 기능에서 에러가 나도 메뉴는 항상 동작하도록 파일 맨 위에 둠
-============================ */
-
 (function () {
 
   const menuBtn = document.querySelector(".menu_btn");
@@ -152,7 +147,6 @@ if (typeof Swiper === "undefined") {
 
   /* ============================
      개막작 슬라이드
-     - 자동 슬라이드 + 버튼(이전/다음) 이동
   ============================ */
 
   const openingSwiper = new Swiper(".opening_slide", {
@@ -178,7 +172,6 @@ if (typeof Swiper === "undefined") {
 
   /* ============================
      경쟁부문 슬라이드
-     - 자동 슬라이드 + 버튼(이전/다음) 이동
   ============================ */
 
   const competitionSwiper = new Swiper(".competition_slide", {
@@ -205,8 +198,6 @@ if (typeof Swiper === "undefined") {
 
   /* ============================
      초청부문 슬라이드
-     - 버튼(이전/다음) 클릭으로만 이동 (자동재생 없음)
-     - 끝에 도달하면 버튼이 비활성화(흐려짐) 되도록 loop 사용 안 함
   ============================ */
 
   const invitationSwiper = new Swiper(".invitation_slide", {
@@ -234,7 +225,6 @@ if (typeof Swiper === "undefined") {
 
   /* ============================
      특별상영 슬라이드
-     - 버튼(이전/다음) 클릭으로만 이동 (자동재생 없음)
   ============================ */
 
   const specialSwiper = new Swiper(".special_slide", {
