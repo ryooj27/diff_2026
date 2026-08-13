@@ -81,7 +81,7 @@ button {
 
 
 /* =========================================
-  헤더 
+  헤더 (메인 index.html과 동일 - 아코디언 메가메뉴)
 ========================================= */
 header {
   width:100%;
@@ -702,7 +702,7 @@ header {
   color:var(--black);
 }
 
-
+/* 호버 시놉시스 오버레이 (경쟁부문/초청부문/특별상영) */
 .film_synopsis {
   position:absolute;
   top:0;
@@ -745,7 +745,8 @@ header {
   text-overflow:ellipsis;
 }
 
-
+/* 초청부문/특별상영은 카드 자체가 훨씬 작아서(383px↓) 시놉시스도
+   3줄 정도만 짧게 보여주고, 패딩도 좀 더 좁게 */
 .invitation .film_synopsis,
 .special .film_synopsis {
   padding:20px;
@@ -759,7 +760,9 @@ header {
   line-clamp:3;
 }
 
-
+/* 마우스 호버가 실제로 가능한 기기(PC)에서만 :hover로 시놉시스 노출.
+   터치 기기는 :hover가 "고착"되어 배지/텍스트와 겹쳐 보이는 문제가 있어
+   .is_open 클래스(JS 토글, program.js)로 별도 제어함 */
 @media (hover:hover) and (pointer:fine) {
   .film_card:hover .film_synopsis {
     opacity:1;
@@ -1287,7 +1290,9 @@ footer {
 
 @media screen and (max-width:1024px){
 
-
+  /* 태블릿 구간(768~1024px) 폰트 크기 보정
+     - 기존에는 이 구간에서 레이아웃만 좁아지고 글자 크기는
+       PC 크기 그대로 유지되어 텍스트가 넘치거나 줄바꿈이 어색했음 */
   .visual_title h1{
     font-size:36px;
   }
@@ -1524,12 +1529,13 @@ footer {
       display:none;
   }
 
-
+  /* 섹션 간 여백이 데스크탑(160px)과 동일해서 태블릿에서 과하게 넓어 보이던 부분 축소 */
   .opening{
       padding:110px 0 0;
   }
 
-
+  /* 데스크탑 고정폭(675px)이 태블릿 카드 너비를 넘어서면서
+     시놉시스 텍스트 오른쪽이 잘리던 문제 수정 */
   .opening_text{
       width:auto;
       left:32px;
@@ -1575,6 +1581,10 @@ footer {
 
   .program_bg {
   background-image:url("../img/bg\ \(1\).png");
+  /* iOS Safari(카카오톡 인앱 브라우저 포함)는 background-attachment:fixed를
+     제대로 지원하지 않아 배경 이미지가 아예 안 보이는 문제가 있어
+     모바일/태블릿에서는 scroll로 되돌림 */
+  background-attachment:scroll;
   }
 
   .invitation .program_intro img,
@@ -1616,6 +1626,8 @@ footer {
     display:none;
   }
 
+  /* 데스크탑 고정폭(760px)을 그대로 물려받아 태블릿에서 좌우 여백이
+     어긋나 보이던 문제 수정 - 컨테이너 폭에 맞춰 유동적으로 */
   .program_tab ul{
     width:100%;
     max-width:calc(100% - 64px);
@@ -1667,6 +1679,7 @@ footer {
     font-size:22px;
   }
 
+  /* 섹션 간 여백 모바일에서 더 축소 */
   .opening{
       padding:80px 0 0;
   }
