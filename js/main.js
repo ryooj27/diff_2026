@@ -132,11 +132,10 @@ function PanoramaEffect({ swiper, extendParams, on }) {
       `${swiper.params.containerModifierClass}panorama`
     );
 
-    /* 예전에는 swiper-3d 클래스를 추가해 실제 CSS 3D(perspective)를 사용했으나,
-       iOS Safari에서 overflow:hidden을 가진 조상 요소(가로 스크롤 방지용으로
-       html/body에 필요)와 3D perspective 요소가 만나면 렌더링이 깨지는
-       고질적인 버그가 있어 3D 클래스는 더 이상 추가하지 않음.
-       아래 progress 핸들러도 2D 변형(translateX + scale)만 사용하도록 변경함 */
+    swiper.classNames.push(
+      `${swiper.params.containerModifierClass}3d`
+    );
+
 
     Object.assign(swiper.params,{
       watchSlidesProgress:true
@@ -155,6 +154,16 @@ function PanoramaEffect({ swiper, extendParams, on }) {
     if(swiper.params.effect !== "panorama") return;
 
 
+    const {
+      depth = 300,
+      rotate = 25
+    } = swiper.params.panoramaEffect;
+
+
+    const radian = rotate * Math.PI / 180 / 2;
+    const ratio = 1 / (180 / rotate);
+
+
     swiper.slides.forEach((slide,index)=>{
 
       const progress = slide.progress;
@@ -163,19 +172,29 @@ function PanoramaEffect({ swiper, extendParams, on }) {
 
       const position = progress;
 
-      // 중앙에서 멀어질수록(|position|이 클수록) 작아지고 옆으로 밀려나도록
-      const clamped = Math.max(-2, Math.min(2, position));
-      const distance = Math.min(Math.abs(clamped), 1);
 
-      const scale = 1 - distance * 0.22;
+      const scaleFactor =
+        1 - Math.cos(position * ratio * Math.PI);
+
 
       const translateX =
-        `${clamped * (slideWidth / 2.4)}px`;
+        `${position * (slideWidth / 3) * scaleFactor}px`;
 
-      slide.style.opacity = `${1 - distance * 0.35}`;
+
+      const rotateY =
+        `${position * rotate}deg`;
+
+
+      const translateZ =
+        `${slideWidth * 0.5 / Math.sin(radian) * scaleFactor - depth}px`;
+
 
       slide.style.transform =
-        `translateX(${translateX}) scale(${scale})`;
+        `
+        translateX(${translateX})
+        translateZ(${translateZ})
+        rotateY(${rotateY})
+        `;
 
     });
 
