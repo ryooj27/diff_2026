@@ -25,7 +25,6 @@
     const toggleBtn = li.querySelector(".mega_toggle");
     const isOpen = li.classList.contains("open");
 
-    // 다른 항목은 닫고 하나만 펼쳐지게
     headerNav.querySelectorAll(".has_mega.open").forEach(function (openLi) {
       if (openLi !== li) closeAccordion(openLi);
     });
@@ -47,7 +46,6 @@
     });
   });
 
-  // 태블릿/모바일에서는 상단 메뉴 텍스트를 눌러도 펼침/접힘 동작
   navLinks.forEach(function (link) {
     link.addEventListener("click", function (event) {
       if (window.innerWidth <= 1024) {
@@ -115,11 +113,6 @@
 
 })();
 
-
-/* ============================
-   프로그램 탭: 호버뿐만 아니라 클릭으로도 활성화
-============================ */
-
 (function () {
 
   const tabItems = document.querySelectorAll(".program_tab li");
@@ -140,14 +133,9 @@
 
 })();
 
-
 if (typeof Swiper === "undefined") {
   console.error("Swiper 라이브러리가 로드되지 않았습니다. CDN 스크립트 태그와 네트워크 연결을 확인해주세요.");
 } else {
-
-  /* ============================
-     개막작 슬라이드
-  ============================ */
 
   const openingSwiper = new Swiper(".opening_slide", {
 
@@ -168,11 +156,6 @@ if (typeof Swiper === "undefined") {
     },
 
   });
-
-
-  /* ============================
-     경쟁부문 슬라이드
-  ============================ */
 
   const competitionSwiper = new Swiper(".competition_slide", {
 
@@ -195,11 +178,6 @@ if (typeof Swiper === "undefined") {
 
   });
 
-
-  /* ============================
-     초청부문 슬라이드
-  ============================ */
-
   const invitationSwiper = new Swiper(".invitation_slide", {
 
     loop: false,
@@ -221,11 +199,6 @@ if (typeof Swiper === "undefined") {
     },
 
   });
-
-
-  /* ============================
-     특별상영 슬라이드
-  ============================ */
 
   const specialSwiper = new Swiper(".special_slide", {
 
@@ -251,13 +224,6 @@ if (typeof Swiper === "undefined") {
 
 }
 
-
-/* ============================
-   경쟁부문/초청부문/특별상영 카드
-   - 터치 기기(호버 불가)에서는 탭으로 시놉시스를 열고 닫음
-   - PC(마우스 호버 가능)에서는 CSS :hover가 그대로 동작하므로 개입하지 않음
-============================ */
-
 (function () {
 
   const isTouchDevice = !window.matchMedia("(hover: hover) and (pointer: fine)").matches;
@@ -280,12 +246,12 @@ if (typeof Swiper === "undefined") {
 
     link.addEventListener("click", function (event) {
       if (!card.classList.contains("is_open")) {
-        // 첫 탭: 실제 이동 대신 시놉시스만 열기
+
         event.preventDefault();
         closeAllCards(card);
         card.classList.add("is_open");
       }
-      // 이미 열려 있는 상태에서 다시 탭하면 정상적으로 링크 이동
+
     });
   });
 

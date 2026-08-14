@@ -113,7 +113,6 @@
 
 })();
 
-
 function PanoramaEffect({ swiper, extendParams, on }) {
 
   extendParams({
@@ -122,7 +121,6 @@ function PanoramaEffect({ swiper, extendParams, on }) {
       rotate:25
     }
   });
-
 
   on("beforeInit", () => {
 
@@ -136,7 +134,6 @@ function PanoramaEffect({ swiper, extendParams, on }) {
       `${swiper.params.containerModifierClass}3d`
     );
 
-
     Object.assign(swiper.params,{
       watchSlidesProgress:true
     });
@@ -147,22 +144,17 @@ function PanoramaEffect({ swiper, extendParams, on }) {
 
   });
 
-
-
   on("progress",()=>{
 
     if(swiper.params.effect !== "panorama") return;
-
 
     const {
       depth = 300,
       rotate = 25
     } = swiper.params.panoramaEffect;
 
-
     const radian = rotate * Math.PI / 180 / 2;
     const ratio = 1 / (180 / rotate);
-
 
     swiper.slides.forEach((slide,index)=>{
 
@@ -172,22 +164,17 @@ function PanoramaEffect({ swiper, extendParams, on }) {
 
       const position = progress;
 
-
       const scaleFactor =
         1 - Math.cos(position * ratio * Math.PI);
-
 
       const translateX =
         `${position * (slideWidth / 3) * scaleFactor}px`;
 
-
       const rotateY =
         `${position * rotate}deg`;
 
-
       const translateZ =
         `${slideWidth * 0.5 / Math.sin(radian) * scaleFactor - depth}px`;
-
 
       slide.style.transform =
         `
@@ -199,8 +186,6 @@ function PanoramaEffect({ swiper, extendParams, on }) {
     });
 
   });
-
-
 
   on("setTransition",(swiper,speed)=>{
 
@@ -218,8 +203,6 @@ function PanoramaEffect({ swiper, extendParams, on }) {
   });
 
 }
-
-
 
 const posterSlides = document.querySelectorAll(".poster_slide .swiper-slide");
 const posterNameEl = document.querySelector(".poster_name");
@@ -240,24 +223,17 @@ function updatePosterInfo(swiper) {
 
 const posterSwiper = new Swiper(".poster_slide",{
 
-
   modules:[PanoramaEffect],
-
 
   effect:"panorama",
 
-
   slidesPerView:"auto",
-
 
   centeredSlides:true,
 
-
   loop:true,
 
-
   spaceBetween:30,
-
 
   panoramaEffect:{
 
@@ -267,7 +243,6 @@ const posterSwiper = new Swiper(".poster_slide",{
 
   },
 
-
   navigation:{
 
     prevEl:".poster_prev",
@@ -276,7 +251,6 @@ const posterSwiper = new Swiper(".poster_slide",{
 
   },
 
-
   on:{
 
     init:function () { updatePosterInfo(this); },
@@ -284,7 +258,6 @@ const posterSwiper = new Swiper(".poster_slide",{
     slideChange:function () { updatePosterInfo(this); }
 
   }
-
 
 });
 
@@ -328,10 +301,6 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-/* ============================
-   About DIFF count-up animation
-============================ */
-
 const countEls = document.querySelectorAll(".count[data-count]");
 
 function animateCount(el) {
@@ -345,7 +314,7 @@ function animateCount(el) {
     if (!startTime) startTime = timestamp;
 
     const progress = Math.min((timestamp - startTime) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    const eased = 1 - Math.pow(1 - progress, 3);
 
     const current = Math.floor(eased * target);
 

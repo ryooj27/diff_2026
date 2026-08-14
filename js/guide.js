@@ -142,8 +142,6 @@
 
 })();
 
-
-
 (function () {
 
   const navItems = document.querySelectorAll(".guide_nav li");
@@ -201,8 +199,6 @@
   }
 
 })();
-
-
 
 (function () {
 

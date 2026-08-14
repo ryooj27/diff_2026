@@ -4,15 +4,12 @@
   font-family: '어그로';
   src: url(../font/SB\ 어그로\ L.ttf);
 }
-/* Pretendard 폰트는 index.html <head>에서 <link>로 미리 불러옵니다
-   (@import는 발견이 늦어 폰트가 늦게 적용되며 레이아웃이 흔들리는 원인이 됨) */
 
 * {
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
-
 
 html {
   overflow-x:hidden;
@@ -23,26 +20,25 @@ html {
 body {
   width:100%;
   overflow-x:hidden;
+
+  -webkit-transform:translateZ(0);
+  transform:translateZ(0);
   font-family:'Pretendard', sans-serif;
   color:#181818;
 }
 
-
 ul, li {
   list-style:none;
 }
-
 
 a {
   color:inherit;
   text-decoration:none;
 }
 
-
 img {
   display:block;
 }
-
 
 button {
   border:0;
@@ -51,14 +47,11 @@ button {
   color:inherit;
 }
 
-
-
 :root {
   --black:#181818;
   --point:#FF6E40;
   --gray:#7A7A7A;
 }
-
 
 .hero_i,
 .poster_i,
@@ -71,13 +64,6 @@ button {
   margin:0 auto;
 }
 
-
-
-/* =====================
-   HEADER
-===================== */
-
-
 header {
   background-color: #fff;
   width: 100%;
@@ -86,7 +72,6 @@ header {
   position: fixed;
   z-index: 1000;
 }
-
 
 .header_i {
 
@@ -101,21 +86,13 @@ header {
 
 }
 
-
-/* logo */
-
 .logo a {
   display:block;
 }
 
-
 .logo img {
   width:100px;
 }
-
-
-
-/* nav */
 
 .header_nav ul {
 
@@ -124,7 +101,6 @@ header {
   gap:84px;
 
 }
-
 
 .header_nav ul li {
 
@@ -139,8 +115,6 @@ header {
 
 }
 
-
-
 .header_nav a {
 
   position:relative;
@@ -154,11 +128,6 @@ header {
   color:var(--point);
 }
 
-
-
-
-/* mobile accordion toggle button (hidden on desktop) */
-
 .mega_head {
 
   display:flex;
@@ -171,9 +140,6 @@ header {
   display:none;
 
 }
-
-
-/* mega menu */
 
 .has_mega {
   padding:38px 0;
@@ -235,10 +201,6 @@ header {
 
 }
 
-
-
-/* icon */
-
 .icon {
 
   display:flex;
@@ -247,25 +209,19 @@ header {
 
 }
 
-
 .icon i, .icon svg {
   width: 28px;
   height: 28px;
-  
+
   font-size:28px;
 
 }
-
-
 
 .menu_btn {
 
   padding:0;
 
 }
-
-
-/* mobile nav overlay (dim background) */
 
 .nav_overlay {
 
@@ -285,12 +241,6 @@ header {
 
 }
 
-
-/* =====================
-   HERO
-===================== */
-
-
 .hero_section {
 
   height:980px;
@@ -302,8 +252,6 @@ header {
 
 }
 
-
-
 .hero_i {
   padding-top: 100px;
 
@@ -313,8 +261,6 @@ header {
   align-items:center;
 
 }
-
-
 
 .hero_title {
 
@@ -327,8 +273,6 @@ header {
 
 }
 
-
-
 .hero_date {
 
   margin-top:20px;
@@ -339,8 +283,6 @@ header {
   color:#fff;
 
 }
-
-
 
 .hero_desc {
 
@@ -354,8 +296,6 @@ header {
 
 }
 
-
-
 .hero_btn {
 
   display:flex;
@@ -364,8 +304,6 @@ header {
   margin-top:60px;
 
 }
-
-
 
 .hero_btn a {
 
@@ -380,8 +318,6 @@ header {
 
 }
 
-
-
 .btn_black {
 
   position:relative;
@@ -389,17 +325,13 @@ header {
   align-items:center;
   justify-content:center;
 
-
   background:var(--black);
   color:#fff;
-
 
   overflow:hidden;
   z-index:0;
 
 }
-
-
 
 .btn_black::before {
 
@@ -410,10 +342,8 @@ header {
   left:50%;
   top:50%;
 
-
   width:0;
   height:0;
-
 
   border-radius:50%;
   background:#fff;
@@ -421,12 +351,9 @@ header {
   transform:translate(-50%,-50%);
   transition:.5s ease;
 
-
   z-index:-1;
 
 }
-
-
 
 .btn_black span,
 .btn_black i {
@@ -437,8 +364,6 @@ header {
 
 }
 
-
-
 .btn_black:hover::before {
 
   width:300px;
@@ -446,33 +371,20 @@ header {
 
 }
 
-
-
 .btn_black:hover {
 
   color:var(--point);
 
 }
 
-/* =====================
-   Poster Section
-===================== */
-
 .poster_section {
   margin-top: 160px;
 }
-
-
-/* inner */
 
 .poster_i {
   width:1400px;
   max-width:calc(100% - 80px);
 }
-
-
-
-/* title */
 
 .poster_title {
 
@@ -494,7 +406,6 @@ header {
   gap:12px;
 }
 
-
 .poster_title h2 {
 
   font-size:40px;
@@ -502,7 +413,6 @@ header {
   line-height:1.2;
 
 }
-
 
 .poster_title i, .poster_title svg {
 
@@ -512,22 +422,17 @@ header {
 
 }
 
-
-
-/* Poster Slide */
-
-
 .poster_slide.swiper{
     overflow: visible;
+    -webkit-transform:translateZ(0);
+    transform:translateZ(0);
 }
-
 
 .poster_slide .swiper-wrapper {
 
   align-items:center;
 
 }
-
 
 .poster_slide .swiper-slide {
 
@@ -536,8 +441,6 @@ header {
   transition:transform .3s ease;
 
 }
-
-
 
 .poster_slide .swiper-slide img {
 
@@ -548,11 +451,6 @@ header {
 
 }
 
-
-
-/* Poster Info */
-
-
 .poster_info {
 
   margin-top:10px;
@@ -561,15 +459,12 @@ header {
 
 }
 
-
 .poster_name {
 
   font-size:40px;
   font-weight:700;
 
 }
-
-
 
 .poster_date {
 
@@ -581,8 +476,6 @@ header {
 
 }
 
-
-
 .poster_place {
 
   margin-top:8px;
@@ -592,11 +485,6 @@ header {
   color:#7A7A7A;
 
 }
-
-
-
-/* Controls */
-
 
 .poster_controls {
 
@@ -608,8 +496,6 @@ header {
   margin-top:40px;
 
 }
-
-
 
 .poster_controls button {
 
@@ -628,8 +514,6 @@ header {
 
 }
 
-
-
 .poster_controls button i, .poster_controls button svg {
   width: 16px;
   height: 16px;
@@ -638,8 +522,6 @@ header {
 
 }
 
-
-
 .poster_controls button:hover {
 
   background: var(--point);
@@ -647,18 +529,11 @@ header {
 
 }
 
-/* =====================
-   ABOUT
-===================== */
-
-
 .about_section {
 
   margin-top:160px;
 
 }
-
-
 
 .about_contents {
 
@@ -670,20 +545,11 @@ header {
 
 }
 
-
-
-/* =====================
-   LEFT
-===================== */
-
-
 .about_left {
 
   width:689px;
 
 }
-
-
 
 .about_title {
 
@@ -693,8 +559,6 @@ header {
 
 }
 
-
-
 .about_title h2 {
 
   font-size:40px;
@@ -702,8 +566,6 @@ header {
   line-height:1.2;
 
 }
-
-
 
 .about_heading {
 
@@ -715,8 +577,6 @@ header {
 
 }
 
-
-
 .about_text {
 
   margin-top:40px;
@@ -727,20 +587,11 @@ header {
 
 }
 
-
-
 .about_text p + p {
 
   margin-top:32px;
 
 }
-
-
-
-/* =====================
-   BUTTON
-===================== */
-
 
 .btn_line {
 
@@ -749,10 +600,8 @@ header {
   align-items:center;
   gap:8px;
 
-
   margin-top:40px;
   padding:18px 20px;
-
 
   border:1px solid #181818;
   font-size:22px;
@@ -763,11 +612,9 @@ header {
   background:#fff;
   color:#181818;
 
-
   z-index:0;
 
 }
-
 
 .btn_line::before {
 
@@ -780,14 +627,12 @@ header {
   width:0;
   height:0;
 
-
   border-radius:50%;
   background:linear-gradient(
     90deg,
     #FF6E40,
     #FE0144
   );
-
 
   transform:translate(-50%, -50%);
   transition:.5s ease;
@@ -796,15 +641,12 @@ header {
 
 }
 
-
 .btn_line:hover::before {
 
   width:400px;
   height:400px;
 
 }
-
-
 
 .btn_line:hover {
 
@@ -813,20 +655,11 @@ header {
 
 }
 
-
-
 .btn_line i {
 
   font-size:24px;
 
 }
-
-
-
-/* =====================
-   RIGHT
-===================== */
-
 
 .about_right {
 
@@ -834,12 +667,9 @@ header {
 
 }
 
-
-
 .about_right h3 {
 
   margin-bottom:24px;
-
 
   font-size:28px;
   font-weight:700;
@@ -847,25 +677,17 @@ header {
 
 }
 
-
-
-/* count */
-
-
 .about_count {
 
   display:flex;
   flex-direction:column;
   align-items:flex-start;
 
-
   gap:6px;
   padding:12px 0;
   border-bottom:.5px solid #939393;
 
 }
-
-
 
 .about_name {
 
@@ -875,23 +697,15 @@ header {
 
 }
 
-
-
 .about_number {
 
   font-size:56px;
   font-weight:700;
   line-height:1.2;
 
-
   color:var(--point);
 
 }
-
-
-/* =====================
-   BLACK SECTION
-===================== */
 
 .black_section{
 
@@ -902,11 +716,6 @@ header {
   color:#fff;
 
 }
-
-
-/* =====================
-   PROGRAM
-===================== */
 
 .program_title{
 
@@ -938,7 +747,6 @@ header {
 
 }
 
-
 .program_contents{
 
   display:grid;
@@ -959,8 +767,6 @@ header {
 
 }
 
-
-
 .program_box img {
 
   width:100%;
@@ -972,10 +778,6 @@ header {
   transition:.5s ease;
 
 }
-
-
-
-/* 검정 그라데이션 */
 
 .program_box::before {
 
@@ -992,10 +794,6 @@ header {
   z-index:1;
 
 }
-
-
-
-/* 주황 그라데이션 */
 
 .program_box::after {
 
@@ -1018,10 +816,6 @@ header {
 
 }
 
-
-
-/* 텍스트 */
-
 .program_text {
 
   position:absolute;
@@ -1033,16 +827,12 @@ header {
 
 }
 
-
-
 .program_text h3 {
 
   font-size:30px;
   font-weight:700;
 
 }
-
-
 
 .program_text p {
 
@@ -1053,30 +843,17 @@ header {
 
 }
 
-
-
-/* hover */
-
 .program_box:hover img {
 
   filter:grayscale(0);
 
 }
 
-
-
 .program_box:hover::after {
 
   bottom:0;
 
 }
-
-
-
-/* =====================
-   GALLERY
-===================== */
-
 
 .gallery{
 
@@ -1087,8 +864,6 @@ header {
   margin:140px auto 0;
 
 }
-
-
 
 .gallery_contents{
 
@@ -1103,8 +878,6 @@ header {
   gap:16px;
 
 }
-
-
 
 .gallery_photo{
 
@@ -1121,8 +894,6 @@ header {
   gap:16px;
 
 }
-
-
 
 .gallery_box{
 
@@ -1142,8 +913,6 @@ header {
 
 }
 
-
-
 .gallery_box img{
 
   width:100%;
@@ -1156,15 +925,11 @@ header {
 
 }
 
-
-
 .gallery_box:hover img{
 
   transform:scale(1.08);
 
 }
-
-
 
 .gallery_text{
 
@@ -1186,8 +951,6 @@ header {
 
 }
 
-
-
 .gallery_text h3{
 
   overflow:hidden;
@@ -1205,10 +968,6 @@ header {
   text-overflow:ellipsis;
 
 }
-
-
-
-/* 영상 */
 
 .gallery_video{
 
@@ -1236,14 +995,10 @@ header {
 
 }
 
-
 .gallery_video::before,
 .gallery_video::after{
   content:none;
 }
-
-
-/* 재생 버튼 */
 
 .play_btn{
   position:absolute;
@@ -1260,9 +1015,6 @@ header {
   color:#fff;
   cursor: pointer;
 }
-
-
-/* 영상 제목 */
 
 .video_text{
   position:absolute;
@@ -1286,10 +1038,6 @@ header {
   font-weight:600;
   line-height:1.4;
 }
-
-/* =====================
-   VIDEO MODAL
-===================== */
 
 .video_modal{
   position:fixed;
@@ -1351,18 +1099,11 @@ body.modal_open{
   overflow:hidden;
 }
 
-/* =====================
-   BOARD
-===================== */
-
-
 .board_section {
 
   margin: 160px 0;
 
 }
-
-
 
 .board_i {
 
@@ -1373,8 +1114,6 @@ body.modal_open{
   gap:80px;
 
 }
-
-
 
 .board_title {
 
@@ -1391,23 +1130,17 @@ body.modal_open{
   height: 28px;
 }
 
-
-
 .board_title h2 {
 
   font-size:40px;
 
 }
 
-
-
 .board_list li {
 
   border-bottom:1px solid #ddd;
 
 }
-
-
 
 .board_list a {
 
@@ -1418,8 +1151,6 @@ body.modal_open{
 
 }
 
-
-
 .board_category {
 
   width:50px;
@@ -1427,8 +1158,6 @@ body.modal_open{
   color:var(--black);
 
 }
-
-
 
 .board_text {
   font-size: 22px;
@@ -1441,8 +1170,6 @@ body.modal_open{
 
 }
 
-
-
 .board_list time {
 
   font-size:16px;
@@ -1450,19 +1177,12 @@ body.modal_open{
 
 }
 
-/* =====================
-   FOOTER
-===================== */
-
-
 footer {
 
   border-top: 1px solid #EEEEEE;
   padding:70px 0;
 
 }
-
-
 
 .footer_i {
 
@@ -1472,15 +1192,11 @@ footer {
 
 }
 
-
-
 .footer_logo img {
 
   width:150px;
 
 }
-
-
 
 .footer_info {
 
@@ -1490,18 +1206,11 @@ footer {
 
 }
 
-
-
 .footer_info p + p {
 
   margin-top:15px;
 
 }
-
-/* =====================
-   SIDE BUTTON
-===================== */
-
 
 .side_btn {
 
@@ -1509,41 +1218,30 @@ footer {
   right:90px;
   bottom:120px;
 
-
   display:flex;
   flex-direction:column;
   gap:12px;
 
-
   z-index:9999;
 
 }
-
-
 
 .side_btn a {
 
   width:60px;
   height:60px;
 
-
   display:flex;
   justify-content:center;
   align-items:center;
-
 
   background:#fff;
   border-radius:16px;
   color:#FF3D00;
 
-
   box-shadow:0 4px 12px rgba(0,0,0,.08);
 
 }
-
-
-
-/* TOP */
 
 .top_btn {
 
@@ -1552,18 +1250,12 @@ footer {
 
 }
 
-
-
-/* 관람안내 */
-
 .ticket_btn {
 
   flex-direction:column;
   gap:2px;
 
 }
-
-
 
 .ticket_btn i, .ticket_btn svg {
 
@@ -1574,8 +1266,6 @@ footer {
 
 }
 
-
-
 .ticket_btn span {
 
   font-size:12px;
@@ -1583,7 +1273,6 @@ footer {
   line-height:1.5;
 
 }
-
 
 @media screen and (min-width:1025px) and (max-width:1280px){
 
@@ -1597,13 +1286,8 @@ footer {
 
 }
 
-
 @media screen and (max-width:1024px){
 
-  /* 태블릿 구간(768~1024px) 폰트 크기 보정
-     - 기존에는 이 구간에서 레이아웃만 좁아지고 글자 크기는
-       PC 크기 그대로 유지되어 텍스트가 넘치거나 줄바꿈이 어색했음
-     - .hero_title / .hero_date 는 아래쪽에 이미 있는 규칙을 직접 수정함 */
   .poster_title h2,
   .about_title h2,
   .program_title h2,
@@ -1630,7 +1314,6 @@ footer {
     max-width:calc(100% - 64px);
     margin:0 auto;
   }
-
 
   header{
     width:100%;
@@ -1749,9 +1432,6 @@ footer {
     color:var(--point);
   }
 
-  /* Font Awesome 스크립트가 <i>를 런타임에 <svg>로 자동 치환하기 때문에
-     ".mega_toggle i" 만으로는 회전이 안 걸릴 수 있어, 태그와 상관없이
-     항상 정확한 aria-expanded 속성 기준으로 회전을 건다 */
   .mega_toggle[aria-expanded="true"] i,
   .mega_toggle[aria-expanded="true"] svg{
     transform:rotate(180deg);
@@ -1786,9 +1466,6 @@ footer {
     transition:max-height .35s ease, margin-top .35s ease;
   }
 
-  /* 서브메뉴 개수가 늘어나도 안전하게 펼쳐지도록 넉넉한 고정값 사용
-     (JS의 scrollHeight 계산에 의존하면 타이밍에 따라 0으로 측정되어
-     펼쳐지지 않는 것처럼 보이는 문제가 있었음) */
   .has_mega.open .mega_panel{
     max-height:600px !important;
     margin-top:12px;
@@ -1819,7 +1496,6 @@ footer {
     height:28px;
     font-size:28px;
   }
-
 
   .hero_section{
     width:100%;
@@ -1911,7 +1587,6 @@ footer {
     font-size:28px;
   }
 
-
   .poster_section{
     margin-top:110px;
   }
@@ -1927,8 +1602,6 @@ footer {
   .poster_slide .swiper-slide img{
     height:390px;
   }
-
-
 
   .about_section{
     margin-top:110px;
@@ -1961,9 +1634,6 @@ footer {
     font-size:42px;
   }
 
-
-
-
   .black_section{
     margin-top:110px;
     padding:110px 0;
@@ -1989,9 +1659,6 @@ footer {
     flex:0 0 320px;
   }
 
-
- 
-
   .gallery{
   margin-top:100px;
 }
@@ -2013,11 +1680,6 @@ footer {
     height:400px;
   }
 
-
-  /* =====================
-     BOARD
-  ===================== */
-
   .board_section{
     margin:110px 0;
   }
@@ -2033,8 +1695,6 @@ footer {
 }
 
 }
-
-
 
 @media screen and (max-width:767px){
 
@@ -2052,7 +1712,6 @@ footer {
     max-width:calc(100% - 40px);
   }
 
-
     header{
     height:80px;
   }
@@ -2066,9 +1725,6 @@ footer {
     padding:100px 24px 48px;
   }
 
-
-
-
   .hero_section{
     height:auto;
 
@@ -2076,7 +1732,7 @@ footer {
 
     background-color:#fff;
     background-image:url(../img/main_hero\ \(1\).png);
-    
+
   }
 
   .hero_i{
@@ -2115,7 +1771,6 @@ footer {
     color:white
   }
 
- 
   .hero_btn{
     width:100%;
   }
@@ -2138,11 +1793,6 @@ footer {
     height:16px;
     font-size:16px;
   }
-
-
-  /* =====================
-     POSTER
-  ===================== */
 
   .poster_section{
     margin-top:80px;
@@ -2173,11 +1823,6 @@ footer {
     width:48px;
     height:48px;
   }
-
-
-  /* =====================
-     ABOUT
-  ===================== */
 
   .about_section{
     margin-top:80px;
@@ -2211,7 +1856,7 @@ footer {
   }
 
   .btn_line{
-    
+
     justify-content:center;
 
     margin-top:28px;
@@ -2231,11 +1876,6 @@ footer {
   .about_number{
     font-size:34px;
   }
-
-
-  /* =====================
-     BLACK SECTION / PROGRAM
-  ===================== */
 
   .black_section{
     margin-top:80px;
@@ -2268,16 +1908,10 @@ footer {
     font-size:14px;
   }
 
-
-  /* =====================
-     GALLERY
-  ===================== */
-
   .gallery{
-    
+
     margin-top:64px;
   }
-  
 
   .gallery_photo,
   .gallery_video{
@@ -2293,11 +1927,6 @@ footer {
   .video_text h3{
     font-size:18px;
   }
-
-
-  /* =====================
-     BOARD
-  ===================== */
 
   .board_section{
     margin:80px 0;
@@ -2330,11 +1959,6 @@ footer {
     font-size:13px;
   }
 
-
-  /* =====================
-     FOOTER
-  ===================== */
-
   .footer_i{
     flex-direction:column;
     gap:24px;
@@ -2347,6 +1971,5 @@ footer {
     .footer_info{
     font-size: 9px;
   }
-
 
 }

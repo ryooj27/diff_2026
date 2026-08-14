@@ -1,6 +1,5 @@
 @charset "utf-8";
 
-
 * {
   margin:0;
   padding:0;
@@ -51,13 +50,11 @@ button {
   color:inherit;
 }
 
-
 :root {
   --black:#181818;
   --point:#FF6E40;
   --gray:#7A7A7A;
 }
-
 
 .hero_i,
 .poster_i,
@@ -79,10 +76,6 @@ button {
   margin:0 auto;
 }
 
-
-/* =========================================
-  헤더 (메인 index.html과 동일 - 아코디언 메가메뉴)
-========================================= */
 header {
   width:100%;
   height:100px;
@@ -236,15 +229,10 @@ header {
   z-index:999;
 }
 
-
 .menu_btn {
   padding:0;
 }
 
-
-/* =========================================
-  비주얼
-========================================= */
 .visual {
   width:100%;
   height:400px;
@@ -297,10 +285,6 @@ header {
   text-align:left;
 }
 
-
-/* =========================================
-   프로그램
-========================================= */
 .program_tab {
   width:100%;
   height:80px;
@@ -345,10 +329,6 @@ header {
   border-bottom-color:var(--point);
 }
 
-
-/* =========================================
-   arrow
-========================================= */
 .opening_prev,
 .opening_next,
 .competition_prev,
@@ -438,10 +418,6 @@ header {
   right:-31px;
 }
 
-
-/* =========================================
-  more btn
-========================================= */
 .more {
   position:relative;
   overflow:hidden;
@@ -450,7 +426,7 @@ header {
   display:flex;
   align-items:center;
   justify-content:center;
-  
+
   padding:10px 20px;
 
   border:1px solid #fff;
@@ -486,11 +462,6 @@ header {
   height:400px;
 }
 
-
-/* =========================================
-  black section
-========================================= */
-
 .opening .section_title{
   flex-direction: column;
   text-align: center;
@@ -502,8 +473,6 @@ header {
   align-items:center;
   gap: 24px;
 }
-
-
 
 .opening .section_title h2,
 .competition .section_title h2 {
@@ -529,10 +498,6 @@ header {
   margin-top:8px;
 }
 
-
-/* =========================================
-  Opening
-========================================= */
 .opening {
   padding:160px 0 0;
   background:var(--black);
@@ -609,7 +574,6 @@ header {
   color:var(--point);
 }
 
-
 .opening_fixed_label {
   position:absolute;
   top:30px;
@@ -655,10 +619,6 @@ header {
   text-overflow:ellipsis;
 }
 
-
-/* =========================================
-  Competition 섹션
-========================================= */
 .competition {
   padding:160px 0;
   background:var(--black);
@@ -702,7 +662,6 @@ header {
   color:var(--black);
 }
 
-/* 호버 시놉시스 오버레이 (경쟁부문/초청부문/특별상영) */
 .film_synopsis {
   position:absolute;
   top:0;
@@ -745,8 +704,6 @@ header {
   text-overflow:ellipsis;
 }
 
-/* 초청부문/특별상영은 카드 자체가 훨씬 작아서(383px↓) 시놉시스도
-   3줄 정도만 짧게 보여주고, 패딩도 좀 더 좁게 */
 .invitation .film_synopsis,
 .special .film_synopsis {
   padding:20px;
@@ -760,9 +717,6 @@ header {
   line-clamp:3;
 }
 
-/* 마우스 호버가 실제로 가능한 기기(PC)에서만 :hover로 시놉시스 노출.
-   터치 기기는 :hover가 "고착"되어 배지/텍스트와 겹쳐 보이는 문제가 있어
-   .is_open 클래스(JS 토글, program.js)로 별도 제어함 */
 @media (hover:hover) and (pointer:fine) {
   .film_card:hover .film_synopsis {
     opacity:1;
@@ -839,10 +793,6 @@ header {
   font-weight:600;
 }
 
-
-/* =========================================
-  프로그램 bg
-========================================= */
 .program_bg {
   background-image:url("../img/bg\ \(3\).png");
   background-repeat:repeat-y;
@@ -894,7 +844,6 @@ header {
   line-height:1.4;
   color:var(--point);
 }
-
 
 .invitation .more,
 .special .more {
@@ -1160,10 +1109,6 @@ header {
   color:var(--black);
 }
 
-
-/* =========
-   푸터
-============ */
 footer {
   padding:70px 0;
   border-top:1px solid #EEEEEE;
@@ -1189,52 +1134,36 @@ footer {
   margin-top:15px;
 }
 
-/* =====================
-   SIDE BUTTON
-===================== */
-
-
 .side_btn {
 
   position:fixed;
   right:90px;
   bottom:120px;
 
-
   display:flex;
   flex-direction:column;
   gap:12px;
 
-
   z-index:9999;
 
 }
-
-
 
 .side_btn a {
 
   width:60px;
   height:60px;
 
-
   display:flex;
   justify-content:center;
   align-items:center;
-
 
   background:#fff;
   border-radius:16px;
   color:#FF3D00;
 
-
   box-shadow:0 4px 12px rgba(0,0,0,.08);
 
 }
-
-
-
-/* TOP */
 
 .top_btn {
 
@@ -1243,18 +1172,12 @@ footer {
 
 }
 
-
-
-/* 관람안내 */
-
 .ticket_btn {
 
   flex-direction:column;
   gap:2px;
 
 }
-
-
 
 .ticket_btn i, .ticket_btn svg {
 
@@ -1264,8 +1187,6 @@ footer {
   line-height:1;
 
 }
-
-
 
 .ticket_btn span {
 
@@ -1287,12 +1208,8 @@ footer {
 
 }
 
-
 @media screen and (max-width:1024px){
 
-  /* 태블릿 구간(768~1024px) 폰트 크기 보정
-     - 기존에는 이 구간에서 레이아웃만 좁아지고 글자 크기는
-       PC 크기 그대로 유지되어 텍스트가 넘치거나 줄바꿈이 어색했음 */
   .visual_title h1{
     font-size:36px;
   }
@@ -1332,7 +1249,6 @@ footer {
   .special_next{
     display:none;
   }
-
 
   header{
     width:100%;
@@ -1529,13 +1445,10 @@ footer {
       display:none;
   }
 
-  /* 섹션 간 여백이 데스크탑(160px)과 동일해서 태블릿에서 과하게 넓어 보이던 부분 축소 */
   .opening{
       padding:110px 0 0;
   }
 
-  /* 데스크탑 고정폭(675px)이 태블릿 카드 너비를 넘어서면서
-     시놉시스 텍스트 오른쪽이 잘리던 문제 수정 */
   .opening_text{
       width:auto;
       left:32px;
@@ -1577,13 +1490,9 @@ footer {
       justify-content:flex-start;
   }
 
-
-
   .program_bg {
   background-image:url("../img/bg\ \(1\).png");
-  /* iOS Safari(카카오톡 인앱 브라우저 포함)는 background-attachment:fixed를
-     제대로 지원하지 않아 배경 이미지가 아예 안 보이는 문제가 있어
-     모바일/태블릿에서는 scroll로 되돌림 */
+
   background-attachment:scroll;
   }
 
@@ -1591,7 +1500,7 @@ footer {
   .special .program_intro img{
     display:none;
   }
-    
+
   .invitation .program_body,
   .special .program_body{
     display:block;
@@ -1604,15 +1513,12 @@ footer {
     margin-bottom:56px;
   }
 
-
-
   .invitation .slide_area,
   .special .slide_area{
       width:calc(100vw - 32px);
       max-width: none;
       overflow:hidden;
   }
-  
 
   .invitation .program_intro h3,
   .special .program_intro h3,
@@ -1626,8 +1532,6 @@ footer {
     display:none;
   }
 
-  /* 데스크탑 고정폭(760px)을 그대로 물려받아 태블릿에서 좌우 여백이
-     어긋나 보이던 문제 수정 - 컨테이너 폭에 맞춰 유동적으로 */
   .program_tab ul{
     width:100%;
     max-width:calc(100% - 64px);
@@ -1679,7 +1583,6 @@ footer {
     font-size:22px;
   }
 
-  /* 섹션 간 여백 모바일에서 더 축소 */
   .opening{
       padding:80px 0 0;
   }
@@ -1695,8 +1598,6 @@ footer {
   .special{
       padding:64px 0 80px;
   }
-
-
 
   .program_tab{
       width:100%;
@@ -1718,7 +1619,7 @@ footer {
       justify-content:space-between;
 
       width:max-content;
-      min-width:100%; 
+      min-width:100%;
 
       gap:16px;
 
@@ -1751,7 +1652,6 @@ footer {
       font-weight:600;
       border-bottom:5px solid #FF6E40;
   }
-
 
   .opening_card{
       height:500px;
@@ -1810,11 +1710,9 @@ footer {
       font-size:16px;
   }
 
-
   .competition .more{
       font-size:16px;
   }
-
 
   .competition_slide .swiper-slide,
   .competition .film_card{
@@ -1896,8 +1794,6 @@ footer {
     margin-top:68px;
   }
 
-  /* invitation & special */
-
   .invitation_i,
   .special_i{
       display:flex;
@@ -1960,8 +1856,6 @@ footer {
       width:calc(100vw - 20px);
   }
 
-
-
   .invitation_slide .swiper-slide,
   .special_slide .swiper-slide{
       width:219px;
@@ -2023,9 +1917,6 @@ footer {
   .special .film_text .director{
       margin-top:8px;
   }
-
-  /* footer */
-
 
   .footer_i{
     flex-direction:column;
