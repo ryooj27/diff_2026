@@ -250,3 +250,49 @@ if (typeof Swiper === "undefined") {
   });
 
 }
+
+
+/* ============================
+   경쟁부문/초청부문/특별상영 카드
+   - 터치 기기(호버 불가)에서는 탭으로 시놉시스를 열고 닫음
+   - PC(마우스 호버 가능)에서는 CSS :hover가 그대로 동작하므로 개입하지 않음
+============================ */
+
+(function () {
+
+  const isTouchDevice = !window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  if (!isTouchDevice) return;
+
+  const filmCards = document.querySelectorAll(".film_card");
+
+  if (!filmCards.length) return;
+
+  function closeAllCards(except) {
+    filmCards.forEach(function (card) {
+      if (card !== except) card.classList.remove("is_open");
+    });
+  }
+
+  filmCards.forEach(function (card) {
+    const link = card.querySelector("a");
+    if (!link) return;
+
+    link.addEventListener("click", function (event) {
+      if (!card.classList.contains("is_open")) {
+        // 첫 탭: 실제 이동 대신 시놉시스만 열기
+        event.preventDefault();
+        closeAllCards(card);
+        card.classList.add("is_open");
+      }
+      // 이미 열려 있는 상태에서 다시 탭하면 정상적으로 링크 이동
+    });
+  });
+
+  document.addEventListener("click", function (event) {
+    if (!event.target.closest(".film_card")) {
+      closeAllCards(null);
+    }
+  });
+
+})();
