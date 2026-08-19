@@ -21,8 +21,6 @@ body {
   width:100%;
   overflow-x:hidden;
 
-  -webkit-transform:translateZ(0);
-  transform:translateZ(0);
   font-family:'Pretendard', sans-serif;
   color:#181818;
 }
@@ -51,6 +49,7 @@ button {
   --black:#181818;
   --point:#FF6E40;
   --gray:#7A7A7A;
+  --line:#ddd;
 }
 
 .hero_i,
@@ -67,7 +66,7 @@ button {
 header {
   background-color: #fff;
   width: 100%;
-  height: 100px;
+  height: 80px;
   box-shadow:0 4px 10px rgba(0,0,0,.08);
   position: fixed;
   z-index: 1000;
@@ -108,7 +107,7 @@ header {
 
   display:block;
 
-  font-size:22px;
+  font-size:20px;
   font-weight:600;
 
   white-space:nowrap;
@@ -219,6 +218,8 @@ header {
 
 .menu_btn {
 
+  display:none;
+
   padding:0;
 
 }
@@ -253,7 +254,7 @@ header {
 }
 
 .hero_i {
-  padding-top: 100px;
+  padding-top: 80px;
 
   height:100%;
 
@@ -364,6 +365,11 @@ header {
 
 }
 
+.btn_black i {
+  font-size:22px;
+  padding-top:6px;
+}
+
 .btn_black:hover::before {
 
   width:300px;
@@ -397,13 +403,23 @@ header {
 }
 
 .gallery_title{
-  font-size:20px;
   width:fit-content;
   margin-bottom:40px;
 
   display:flex;
   align-items:center;
   gap:12px;
+}
+
+.gallery_title h2 {
+  font-size:40px;
+  font-weight:700;
+  line-height:1.2;
+}
+
+.gallery_title i, .gallery_title svg {
+  font-size:22px;
+  padding-top:6px;
 }
 
 .poster_title h2 {
@@ -416,9 +432,8 @@ header {
 
 .poster_title i, .poster_title svg {
 
-  width: 28px;
-  height: 28px;
-  font-size:28px;
+  font-size:22px;
+  padding-top:6px;
 
 }
 
@@ -657,7 +672,8 @@ header {
 
 .btn_line i {
 
-  font-size:24px;
+  font-size:22px;
+  padding-top:6px;
 
 }
 
@@ -685,7 +701,7 @@ header {
 
   gap:6px;
   padding:12px 0;
-  border-bottom:.5px solid #939393;
+  border-bottom:1px solid #ddd;
 
 }
 
@@ -907,7 +923,7 @@ header {
 
   overflow:hidden;
 
-  border:1px solid #7a7a7a;
+  border:1px solid #ddd;
 
   border-radius:16px;
 
@@ -981,7 +997,7 @@ header {
 
   overflow:hidden;
 
-  border:1px solid #7a7a7a;
+  border:1px solid #ddd;
 
   border-radius:16px;
 
@@ -1126,8 +1142,8 @@ body.modal_open{
 }
 
 .board_title i, .board_title svg{
-  width: 28px;
-  height: 28px;
+  font-size:22px;
+  padding-top:6px;
 }
 
 .board_title h2 {
@@ -1179,8 +1195,9 @@ body.modal_open{
 
 footer {
 
-  border-top: 1px solid #EEEEEE;
+  border-top: 1px solid #ddd;
   padding:70px 0;
+  background:var(--black);
 
 }
 
@@ -1202,7 +1219,7 @@ footer {
 
   font-size:12px;
   line-height:1.8;
-  color:#181818;
+  color:#fff;
 
 }
 
@@ -1295,6 +1312,10 @@ footer {
     font-size:32px;
   }
 
+  .board_title{
+    margin-bottom:28px;
+  }
+
   .program_text h3{
     font-size:24px;
   }
@@ -1315,9 +1336,15 @@ footer {
     margin:0 auto;
   }
 
+  .menu_btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
   header{
     width:100%;
-    height:100px;
+    height:80px;
 
     position:fixed;
     top:0;
@@ -1394,7 +1421,7 @@ footer {
   .has_mega{
     width:100%;
     padding:20px 0;
-    border-bottom:1px solid #eee;
+    border-bottom:1px solid #ddd;
   }
 
   .header_nav a.nav_link{
@@ -1501,7 +1528,7 @@ footer {
     width:100%;
     height:1020px;
 
-    padding-top:100px;
+    padding-top:80px;
 
     background-image:url(../img/main_hero\ \(1\).png);
     background-repeat:no-repeat;
@@ -1619,7 +1646,6 @@ footer {
 
   .about_right{
     width:100%;
-    order:-1;
   }
 
   .about_heading{
@@ -1938,6 +1964,10 @@ footer {
 
   .board_title h2{
     font-size:28px;
+  }
+
+  .board_title{
+    margin-bottom:24px;
   }
 
   .board_list a{
