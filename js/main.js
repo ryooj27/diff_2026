@@ -55,6 +55,18 @@
     });
   });
 
+  headerNav.querySelectorAll(".mega_head > .nav_link, .mega_panel a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      // Links with no real destination (href="#") keep keyboard focus after
+      // click since the page never navigates away. That focus keeps
+      // :focus-within true on .has_mega, leaving the mega menu stuck open
+      // even after the mouse moves away. Blurring releases it immediately.
+      if (link.getAttribute("href") === "#") {
+        link.blur();
+      }
+    });
+  });
+
   function closeAllAccordions() {
     headerNav.querySelectorAll(".has_mega.open").forEach(closeAccordion);
   }

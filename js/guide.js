@@ -55,6 +55,14 @@
     });
   });
 
+  headerNav.querySelectorAll(".mega_head > .nav_link, .mega_panel a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (link.getAttribute("href") === "#") {
+        link.blur();
+      }
+    });
+  });
+
   function closeAllAccordions() {
     headerNav.querySelectorAll(".has_mega.open").forEach(closeAccordion);
   }

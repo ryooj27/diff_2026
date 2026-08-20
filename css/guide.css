@@ -136,14 +136,16 @@ header {
 
 }
 
-.has_mega {
-  padding:38px 0;
+.header_nav .has_mega {
+  height:80px;
+  display:flex;
+  align-items:center;
 }
 
 .mega_panel {
 
   position:absolute;
-  top:90%;
+  top:calc(100% - 1px);
   left:50%;
   transform:translateX(-50%) translateY(-6px);
 
@@ -163,7 +165,7 @@ header {
 
   transition:opacity .25s ease, transform .25s ease, visibility .25s;
 
-  z-index:10;
+  z-index:1001;
 
 }
 
