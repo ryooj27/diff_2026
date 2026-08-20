@@ -149,7 +149,7 @@ header {
 .mega_panel {
 
   position:absolute;
-  top:calc(100% - 1px);
+  top:100%;
   left:50%;
   transform:translateX(-50%) translateY(-6px);
 
@@ -169,7 +169,7 @@ header {
 
   transition:opacity .25s ease, transform .25s ease, visibility .25s;
 
-  z-index:1001;
+  z-index:10;
 
 }
 
