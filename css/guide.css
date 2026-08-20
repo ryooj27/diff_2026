@@ -93,7 +93,7 @@ header {
 
   display:flex;
   align-items:center;
-  gap:84px;
+  gap:100px;
 
 }
 
@@ -957,7 +957,7 @@ header {
   line-height:1.4;
 }
 
-.place_text p i {
+.place_text p i, .place_text p svg {
   color:var(--point);
 }
 
@@ -1449,7 +1449,7 @@ body.nav_open{
   color:#fff;
 }
 
-.place_text p i{
+.place_text p i, .place_text p svg{
   color:#fff;
 }
 

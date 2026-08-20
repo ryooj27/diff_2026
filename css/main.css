@@ -97,7 +97,7 @@ header {
 
   display:flex;
   align-items:center;
-  gap:84px;
+  gap:100px;
 
 }
 
@@ -357,7 +357,8 @@ header {
 }
 
 .btn_black span,
-.btn_black i {
+.btn_black i,
+.btn_black svg {
 
   position:relative;
 
@@ -365,7 +366,7 @@ header {
 
 }
 
-.btn_black i {
+.btn_black i, .btn_black svg {
   font-size:22px;
   padding-top:6px;
 }
@@ -554,7 +555,7 @@ header {
 
   display:flex;
   justify-content:space-between;
-  align-items:flex-end;
+  align-items:flex-start;
   gap:375px;
   margin-top:30px;
 
@@ -670,7 +671,7 @@ header {
 
 }
 
-.btn_line i {
+.btn_line i, .btn_line svg {
 
   font-size:22px;
   padding-top:6px;
@@ -1308,7 +1309,8 @@ footer {
   .poster_title h2,
   .about_title h2,
   .program_title h2,
-  .board_title h2{
+  .board_title h2,
+  .gallery_title h2{
     font-size:32px;
   }
 
@@ -1937,6 +1939,10 @@ footer {
   .gallery{
 
     margin-top:64px;
+  }
+
+  .gallery_title h2{
+    font-size:28px;
   }
 
   .gallery_photo,

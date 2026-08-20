@@ -109,7 +109,7 @@ header {
 .header_nav ul {
   display:flex;
   align-items:center;
-  gap:84px;
+  gap:100px;
 }
 
 .header_nav ul li {
@@ -297,7 +297,7 @@ header {
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:40px;
+  gap:80px;
 }
 
 .program_tab li {
@@ -385,7 +385,11 @@ header {
 .invitation_prev i,
 .invitation_next i,
 .special_prev i,
-.special_next i {
+.special_next i,
+.invitation_prev svg,
+.invitation_next svg,
+.special_prev svg,
+.special_next svg {
   font-size:24px;
 }
 
@@ -871,7 +875,9 @@ header {
 }
 
 .invitation .more i,
-.special .more i {
+.special .more i,
+.invitation .more svg,
+.special .more svg {
   font-size:18px;
   transition:transform .3s ease;
 }
@@ -888,7 +894,11 @@ header {
 .invitation .more:hover i,
 .invitation .more:focus-visible i,
 .special .more:hover i,
-.special .more:focus-visible i {
+.special .more:focus-visible i,
+.invitation .more:hover svg,
+.invitation .more:focus-visible svg,
+.special .more:hover svg,
+.special .more:focus-visible svg {
   transform:translateX(4px);
 }
 
@@ -1518,6 +1528,7 @@ footer {
 
   .program_bg {
   background-image:url("../img/bg\ \(1\).png");
+  background-size:100% auto;
 
   background-attachment:scroll;
   }
@@ -1579,6 +1590,14 @@ footer {
     scroll-margin-top:80px;
   }
 
+  .program_bg {
+    background-image:url("../img/bg\ \(1\).png");
+    background-repeat:repeat-y;
+    background-position:center;
+    background-size:100% auto;
+    background-attachment:scroll;
+  }
+
   .header_i{
     max-width:calc(100% - 40px);
   }
@@ -1627,7 +1646,8 @@ footer {
 
   .program_tab{
       width:100%;
-      height:50px;
+      height:74px;
+      padding-top:24px;
 
       overflow-x:auto;
       -webkit-overflow-scrolling:touch;
