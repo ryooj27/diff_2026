@@ -149,7 +149,7 @@ header {
 .mega_panel {
 
   position:absolute;
-  top:100%;
+  top:calc(100% - 1px);
   left:50%;
   transform:translateX(-50%) translateY(-6px);
 
@@ -169,7 +169,7 @@ header {
 
   transition:opacity .25s ease, transform .25s ease, visibility .25s;
 
-  z-index:10;
+  z-index:1001;
 
 }
 
@@ -1422,8 +1422,10 @@ footer {
     width:100%;
   }
 
-  .has_mega{
+  .header_nav .has_mega{
     width:100%;
+    height:auto;
+    display:block;
     padding:20px 0;
     border-bottom:1px solid #ddd;
   }
